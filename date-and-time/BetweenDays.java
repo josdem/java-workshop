@@ -6,12 +6,12 @@ import static java.time.temporal.ChronoUnit.*;
 public class BetweenDays {
 
   private void compute(){
-    LocalDate chrismas = LocalDate.of(2016, Month.DECEMBER, 25);
+    LocalDate christmas = LocalDate.of(2016, Month.DECEMBER, 25);
     LocalDate today = LocalDate.now();
-    long days = DAYS.between(today, chrismas);
-    System.out.println("There are " + days + " shopping days until Chrismas");
+    long days = DAYS.between(today, christmas);
+    System.out.println("There are " + days + " shopping days until Christmas");
 
-    Period untilChristmas = Period.between(today, chrismas);
+    Period untilChristmas = Period.between(today, christmas);
     System.out.println("There are " + untilChristmas.getMonths() + " months and " + untilChristmas.getDays() + " days until Christmas");
   }
 

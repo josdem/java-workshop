@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 import java.time.Month;
 
-public class DateTimeOperations {
+public class DateOperations {
 
   private void operations(){
     LocalDate today = LocalDate.now();
@@ -10,11 +10,11 @@ public class DateTimeOperations {
     System.out.println("Next week: " + today.plusDays(7));
     System.out.println("Is a Leap Year?: " + today.isLeapYear());
 
-    LocalDate chrismas = LocalDate.of(2016, Month.DECEMBER, 25);
-    System.out.println("Today is bafore Chirsmas?: " + today.isBefore(chrismas));
+    LocalDate christmas = LocalDate.of(2016, Month.DECEMBER, 25);
+    System.out.println("Today is before Christmas?: " + today.isBefore(christmas));
   }
 
   public static void main(String[] args){
-    new DateTimeOperations().operations();
+    new DateOperations().operations();
   }
 }
