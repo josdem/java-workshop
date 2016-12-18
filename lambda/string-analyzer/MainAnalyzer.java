@@ -6,7 +6,6 @@ public class MainAnalyzer {
 
     assert analyzerContains.analyze("In the end, it's not the years in your life that count. It's the life in your years", "life");
     assert analyzerEndsWith.analyze("In the end, it's not the years in your life that count. It's the life in your years", "years");
-
   }
 
 }
