@@ -1,0 +1,23 @@
+apply plugin: "java"
+apply plugin: "application"
+
+version = '0.0.1'
+
+task fatJar(type: Jar) {
+	manifest {
+    attributes 'Hello-Lambda': 'Lambda Jar File Example',
+    'Implementation-Version': version,
+    'Main-Class': 'example.Hello'
+  }
+  baseName = project.name + '-all'
+  from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+  with jar
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile 'com.amazonaws:aws-lambda-java-core:1.1.0'
+}
