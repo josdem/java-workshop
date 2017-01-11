@@ -1,12 +1,13 @@
 package example;
 
-import com.amazonaws.services.lambda.runtime.Context; 
-import com.amazonaws.services.lambda.runtime.LambdaLogger;
+import com.amazonaws.services.lambda.runtime.Context;
+import com.amazonaws.services.lambda.runtime.RequestHandler;
 
-public class Hello {
-    public String myHandler(int myCount, Context context) {
-        LambdaLogger logger = context.getLogger();
-        logger.log("received : " + myCount);
-        return String.valueOf(myCount);
-    }
+public class Hello implements RequestHandler<HelloRequest, HelloResponse> {
+
+  @Override
+  public HelloResponse handleRequest(HelloRequest input, Context context) {
+    return new HelloResponse(input.getInput());
+  }
+
 }
