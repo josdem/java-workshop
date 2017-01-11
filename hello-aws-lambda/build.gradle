@@ -3,9 +3,9 @@ apply plugin: "application"
 
 version = '0.0.1'
 
-task fatJar(type: Jar) {
-	manifest {
-    attributes 'Hello-Lambda': 'Lambda Jar File Example',
+task buildJar(type: Jar) {
+  manifest {
+    attributes 'Implementation-Title': 'Hello AWS Lambda',
     'Implementation-Version': version,
     'Main-Class': 'example.Hello'
   }
@@ -20,4 +20,5 @@ repositories {
 
 dependencies {
   compile 'com.amazonaws:aws-lambda-java-core:1.1.0'
+  compile 'com.amazonaws:aws-lambda-java-events:1.1.0'
 }
