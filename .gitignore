@@ -1,5 +1,6 @@
 **.class
 **.swp
+**.swo
 **/build
 **.gradle
 s3-aws-lambda/outputfile.txt
