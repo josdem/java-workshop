@@ -1,22 +1,14 @@
-Java Application project template
+s3 AWS Lambda
 ------------------------------------
 
-You have just created a basic Java application. There is a standard project
-structure for source code and tests.
+## To invoke use this command
 
-In this project you get:
+```bash
+aws lambda invoke \
+--invocation-type Event \
+--function-name s3-aws-lambda \
+--region us-west-1 \
+--payload file://inputfile.txt \
+outputfile.txt
+```
 
-* A Gradle build file
-* A standard project structure:
-
-    <proj>
-      |
-      +- src
-          |
-          +- main
-          |     |
-          |     +- java
-          |
-          +- test
-          |   |
-          |   +- java
