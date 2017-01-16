@@ -17,7 +17,7 @@ public class AWSClient {
   public AWSClient(String sourceBucket, String sourceKey){
     this.sourceBucket = sourceBucket;
     this.sourceKey = sourceKey;
-    AWSCredentials credentials = new BasicAWSCredentials("AKIAI7RHCUERITC7CAUQ", "RaXbYahTRjSI/bA31r5tJ/7s48Fw/E+zZQCodGam");
+    AWSCredentials credentials = new BasicAWSCredentials("Access Key ID", "Secret Access Key");
     ClientConfiguration clientConfig = new ClientConfiguration();
     this.s3Client = new AmazonS3Client(credentials, clientConfig);
   }
