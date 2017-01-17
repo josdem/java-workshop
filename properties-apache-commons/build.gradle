@@ -1,0 +1,24 @@
+apply plugin: "java"
+apply plugin: "application"
+
+version = '0.0.1'
+
+task buildJar(type: Jar) {
+  manifest {
+    attributes 'Implementation-Title': 'Reading properties files with Apache Configuration',
+    'Implementation-Version': version,
+    'Main-Class': 'example.ConfigurationLauncher'
+  }
+  baseName = project.name + '-all'
+  from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+  with jar
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile 'org.apache.commons:commons-configuration2:2.0'
+  compile 'commons-beanutils:commons-beanutils:1.9.3'
+}
