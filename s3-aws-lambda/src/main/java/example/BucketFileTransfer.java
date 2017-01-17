@@ -12,7 +12,7 @@ public class BucketFileTransfer implements RequestHandler<S3Event, Integer> {
   @Override
   public Integer handleRequest(S3Event event, Context context) {
     LambdaLogger logger = context.getLogger();
-    logger.log("STRARTING to copy file");
+    logger.log("STARTING to copy file");
 
     MetadataFileHelper metadataFileHelper = new MetadataFileHelper(event);
     String sourceBucket = metadataFileHelper.getSourceBucketName();
