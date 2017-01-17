@@ -15,8 +15,8 @@ In this project you get:
   +- src
       |
       +- main
-      |     |
-      |     +- java
+      |   |
+      |   +- java
       |
       +- test
       |   |
