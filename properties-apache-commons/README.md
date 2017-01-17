@@ -13,12 +13,12 @@ In this project you get:
 <proj>
   |
   +- src
-  |
-  +- main
-  |     |
-  |     +- java
-  |
-  +- test
-  |   |
-  |   +- java
+      |
+      +- main
+      |     |
+      |     +- java
+      |
+      +- test
+      |   |
+      |   +- java
   ```

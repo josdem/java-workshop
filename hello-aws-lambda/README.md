@@ -9,14 +9,16 @@ In this project you get:
 * A Gradle build file
 * A standard project structure:
 
-    <proj>
+```
+<proj>
+  |
+  +- src
       |
-      +- src
-          |
-          +- main
-          |     |
-          |     +- java
-          |
-          +- test
-          |   |
-          |   +- java
+      +- main
+      |     |
+      |     +- java
+      |
+      +- test
+      |   |
+      |   +- java
+  ```
