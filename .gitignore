@@ -5,4 +5,5 @@
 **/.gradle/
 s3-aws-lambda/outputfile.txt
 s3-aws-lambda/gradle.properties
+s3-aws-lambda/src/main/resources/aws.properties
 properties-apache-commons/gradle.properties

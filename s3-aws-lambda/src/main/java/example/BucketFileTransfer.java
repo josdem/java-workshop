@@ -28,6 +28,7 @@ public class BucketFileTransfer implements RequestHandler<S3Event, Integer> {
     InputStream objectData = awsClient.getS3Object().getObjectContent();
     ObjectMetadata meta = awsClient.getS3Object().getObjectMetadata();
     awsClient.getS3Client().putObject(destinationBucket, destinationKey, objectData, meta);
+    awsClient.getS3Client().deleteObject(sourceBucket, sourceKey);
     return ResultCode.OK;
   }
 
