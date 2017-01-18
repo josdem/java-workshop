@@ -1,14 +1,16 @@
+def configurationDirectory = "${System.getProperty('user.home')}/.aws"
+
 apply plugin: "java"
 apply plugin: "application"
 
 version = '0.0.1'
 
 task buildZip(type: Zip) {
-    from compileJava
-    from processResources
-    into('lib') {
-        from configurations.runtime
-    }
+  from compileJava
+  from processResources
+  into('lib') {
+    from configurations.runtime
+  }
 }
 
 repositories {
@@ -21,3 +23,11 @@ dependencies {
   compile 'com.amazonaws:aws-lambda-java-core:1.1.0'
   compile 'com.amazonaws:aws-lambda-java-events:1.1.0'
 }
+
+task settingEnvironment(type:Copy) {
+  from configurationDirectory
+  into 'src/main/resources'
+  include "aws.properties"  
+}
+
+processResources.dependsOn "settingEnvironment"
