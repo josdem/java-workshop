@@ -4,4 +4,5 @@
 **/build
 **/.gradle/
 s3-aws-lambda/outputfile.txt
+s3-aws-lambda/gradle.properties
 properties-apache-commons/gradle.properties
