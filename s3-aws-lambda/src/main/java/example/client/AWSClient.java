@@ -1,4 +1,4 @@
-package example;
+package example.client;
 
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.auth.AWSCredentials;
@@ -8,7 +8,9 @@ import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 
-import example.utils.ConfigurationLauncher;
+import org.apache.commons.configuration2.Configuration;
+
+import example.utils.ConfigurationReader;
 import example.exception.LambdaException;
 
 public class AWSClient {
@@ -18,7 +20,7 @@ public class AWSClient {
   AmazonS3 s3Client;
 
   private Configuration getConfig() throws LambdaException {
-    ConfigurationLauncher configurationLauncher = new ConfigurationLauncher();
+    ConfigurationReader configurationLauncher = new ConfigurationReader();
     return configurationLauncher.getConfig();
   }
 

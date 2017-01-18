@@ -1,4 +1,4 @@
-package example;
+package example.utils;
 
 import com.amazonaws.services.lambda.runtime.events.S3Event;
 import com.amazonaws.services.s3.event.S3EventNotification.S3Entity;

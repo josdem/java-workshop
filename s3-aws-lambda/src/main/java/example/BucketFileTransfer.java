@@ -7,6 +7,10 @@ import com.amazonaws.services.lambda.runtime.LambdaLogger;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 
+import example.utils.MetadataFileHelper;
+import example.client.AWSClient;
+import example.enums.ResultCode;
+
 public class BucketFileTransfer implements RequestHandler<S3Event, Integer> {
 
   @Override

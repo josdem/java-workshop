@@ -1,4 +1,4 @@
-package example;
+package example.utils;
 
 import java.io.File;
 
@@ -6,16 +6,17 @@ import org.apache.commons.configuration2.Configuration;
 import org.apache.commons.configuration2.builder.fluent.Configurations;
 import org.apache.commons.configuration2.ex.ConfigurationException;
 
-public class ConfigurationLauncher {
+import example.exception.LambdaException;
 
-  private Configuration getConfig(){
+public class ConfigurationReader {
+
+  public Configuration getConfig(){
     Configurations configs = new Configurations();
     try{
       Configuration config = configs.properties(new File("aws.properties"));
       return config;
-    }
-    catch (ConfigurationException cex) {
-      System.out.println("Error: " + cex.getMessage());
+    } catch (ConfigurationException cex) {
+      throw new LambdaException(cex.getMessage(), cex);
     }
   }
 

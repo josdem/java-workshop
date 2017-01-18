@@ -1,4 +1,4 @@
-package example;
+package example.enums;
 
 public interface ResultCode {
   Integer OK = 200;
