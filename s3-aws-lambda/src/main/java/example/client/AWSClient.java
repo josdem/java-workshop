@@ -20,8 +20,8 @@ public class AWSClient {
   AmazonS3 s3Client;
 
   private Configuration getConfig() throws LambdaException {
-    ConfigurationReader configurationLauncher = new ConfigurationReader();
-    return configurationLauncher.getConfig();
+    ConfigurationReader configurationReader = new ConfigurationReader();
+    return configurationReader.getConfig();
   }
 
   public AWSClient(String sourceBucket, String sourceKey) throws LambdaException{
