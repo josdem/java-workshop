@@ -1,9 +1,13 @@
+
+ext.springVersion = '5.0.0.M4'
+
 apply plugin: "java"
 apply plugin: "application"
 
 repositories {
-    mavenCentral()
+  mavenCentral()
 }
 
 dependencies {
+  compile "org.springframework:spring-webmvc:$springVersion"
 }
