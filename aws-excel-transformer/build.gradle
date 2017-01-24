@@ -1,13 +1,27 @@
 
-ext.springVersion = '5.0.0.M4'
+ext.springVersion = '4.3.5.RELEASE'
 
 apply plugin: "java"
 apply plugin: "application"
+
+version = '0.0.1'
+
+task buildJar(type: Jar) {
+  manifest {
+    attributes 'Implementation-Title': 'Transforming an Excel file using AWS Lambda',
+    'Implementation-Version': version,
+    'Main-Class': 'example.Application'
+  }
+  baseName = project.name + '-all'
+  from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+  with jar
+}
 
 repositories {
   mavenCentral()
 }
 
 dependencies {
-  compile "org.springframework:spring-webmvc:$springVersion"
+  compile "org.springframework:spring-context:$springVersion"
+  compile "org.springframework:spring-core:$springVersion"
 }
