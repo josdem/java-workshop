@@ -1,0 +1,9 @@
+apply plugin: "java"
+apply plugin: "application"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+}
