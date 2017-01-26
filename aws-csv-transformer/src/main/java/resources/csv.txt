@@ -1,0 +1,4 @@
+id|name|lastname|nickname
+1|Ahmed|Mohamed|ahmoha
+2|Sara|Said|sarasa
+3|Jose Luis|De la Cruz|josdem
