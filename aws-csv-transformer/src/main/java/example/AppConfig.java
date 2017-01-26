@@ -7,8 +7,8 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfig {
 
 	@Bean
-	public String mainRunner() {
-		return "Hello World!";
+	public CsvFileReader reader() {
+		return new CsvFileReader();
 	}
 
 }

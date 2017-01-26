@@ -1,4 +1,4 @@
-id|name|lastname|nickname
-1|Ahmed|Mohamed|ahmoha
-2|Sara|Said|sarasa
-3|Jose Luis|De la Cruz|josdem
+id|name|email
+1|Ahmed|ahmed@email.com
+2|Sara|sarasa@email.com
+3|josdem|josdem@email.com
