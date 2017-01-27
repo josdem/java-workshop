@@ -15,7 +15,7 @@ public class CsvFileReader {
     List elements = new ArrayList<List<String>>();
     try{
       FileReader input = new FileReader(path);
-      Iterable<CSVRecord> records = CSVFormat.DEFAULT.withHeader("id", "name", "email").parse(input);
+      Iterable<CSVRecord> records = CSVFormat.TDF.withHeader("id", "name", "email").parse(input);
       for (CSVRecord record : records) {
         List<String> row = new ArrayList<String>();
         String id = record.get("id");
