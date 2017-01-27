@@ -8,12 +8,12 @@ class CsvFileReaderSpec extends Specification {
 
 	void "Should read csv file"(){
 		given:"A path"
-    String path = 'src/test/resources/csv.txt'
-    when:
-    def result = reader.read(path);
-    then:
-    result.size() == 1
-  }
+		String path = 'src/test/resources/csv.txt'
+		when:
+		def result = reader.read(path);
+		then:
+		result.size() == 4
+	}
 
 
 }

@@ -9,25 +9,27 @@ import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 
 public class CsvFileReader {
+  Iterable<CSVRecord> records;
 
-	public List<String> read(String path){
-    List<String> row = new ArrayList<String>();
+  public List<List<String>> read(String path){
+    List elements = new ArrayList<List<String>>();
     try{
-			FileReader input = new FileReader(path);
-			Iterable<CSVRecord> records = CSVFormat.DEFAULT.withHeader("id", "name", "email").parse(input);
-			for (CSVRecord record : records) {
-				String id = record.get("id");
-				String name = record.get("name");
-				String email = record.get("email");
+      FileReader input = new FileReader(path);
+      Iterable<CSVRecord> records = CSVFormat.DEFAULT.withHeader("id", "name", "email").parse(input);
+      for (CSVRecord record : records) {
+        List<String> row = new ArrayList<String>();
+        String id = record.get("id");
+        String name = record.get("name");
+        String email = record.get("email");
         row.add(id);
         row.add(name);
         row.add(email);
+        elements.add(row);
       }
     } catch(IOException ioe){
       System.out.println("Error" + ioe.getMessage());
     }
-		return row;
-	}
+    return elements;
+  }
 
 }
-
