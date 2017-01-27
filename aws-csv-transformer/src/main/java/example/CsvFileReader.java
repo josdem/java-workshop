@@ -9,7 +9,6 @@ import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 
 public class CsvFileReader {
-  Iterable<CSVRecord> records;
 
   public List<List<String>> read(String path){
     List elements = new ArrayList<List<String>>();
@@ -27,7 +26,7 @@ public class CsvFileReader {
         elements.add(row);
       }
     } catch(IOException ioe){
-      System.out.println("Error" + ioe.getMessage());
+      throw new CsvException(ioe.getMessage());
     }
     return elements;
   }
