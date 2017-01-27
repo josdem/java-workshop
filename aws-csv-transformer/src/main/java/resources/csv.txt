@@ -1,4 +1,0 @@
-id|name|email
-1|Ahmed|ahmed@email.com
-2|Sara|sarasa@email.com
-3|josdem|josdem@email.com

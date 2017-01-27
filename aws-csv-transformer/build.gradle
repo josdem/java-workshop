@@ -1,8 +1,11 @@
 
 ext.springVersion = '4.3.5.RELEASE'
 ext.apacheCSVVersion = '1.4'
+ext.groovyVersion = '2.4.8'
+ext.spockVersion = '1.1-groovy-2.4-rc-3'
 
 apply plugin: "java"
+apply plugin: 'groovy'
 apply plugin: "application"
 
 version = '0.0.1'
@@ -26,4 +29,6 @@ dependencies {
   compile "org.springframework:spring-context:$springVersion"
   compile "org.springframework:spring-core:$springVersion"
   compile "org.apache.commons:commons-csv:$apacheCSVVersion"
+  testCompile "org.codehaus.groovy:groovy:$groovyVersion"
+  testCompile "org.spockframework:spock-core:$spockVersion"
 }
