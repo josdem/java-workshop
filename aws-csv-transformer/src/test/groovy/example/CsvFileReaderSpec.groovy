@@ -13,6 +13,7 @@ class CsvFileReaderSpec extends Specification {
 		def result = reader.read(path);
 		then:
 		result.size() == 4
+    result.get(0) == ['id','name','email']
 	}
 
 
