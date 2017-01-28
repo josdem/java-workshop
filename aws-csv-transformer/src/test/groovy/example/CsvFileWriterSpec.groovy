@@ -18,7 +18,14 @@ class CsvFileWriterSpec extends Specification {
 		writer.write(targets,path);
     File file = new File(path)
 		then:"We expect file exist"
-    file
+    List<String> lines = []
+    file.eachLine { line ->
+      lines << line
+    }
+    lines.get(0) == 'id	name	email'
+    lines.get(1) == '1	eric	erich@email.com'
+    lines.get(2) == '2	martin	martinv@email.com'
+    lines.get(3) == '3	josdem	josdem@email.com'
 	}
 
 
