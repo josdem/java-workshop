@@ -18,6 +18,8 @@ public class CsvFileWriter {
       FileWriter output = new FileWriter(path);
       CSVPrinter printer = CSVFormat.TDF.withHeader("id", "name", "email").print(output);
       printer.print(targets);
+      fileWriter.flush();
+      fileWriter.close();
     } catch(IOException ioe){
       throw new CsvException(ioe.getMessage());
     }
