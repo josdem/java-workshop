@@ -17,9 +17,7 @@ public class CsvFileWriter {
     List elements = new ArrayList<List<String>>();
     try{
       FileWriter output = new FileWriter(path);
-      CSVFormat csvFileFormat = CSVFormat.TDF.withRecordSeparator(NEW_LINE_SEPARATOR);
-      CSVPrinter printer = new CSVPrinter(output, csvFileFormat);
-      printer.printRecord("id", "name", "email");
+      CSVPrinter printer = CSVFormat.TDF.withHeader("id", "name", "email").withRecordSeparator(NEW_LINE_SEPARATOR).print(output);
 
       for(Target target: targets){
         List<String> record = new ArrayList<String>();
