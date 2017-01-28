@@ -9,7 +9,7 @@ public class Target {
     this.id = id;
   }
 
-  public String getId(String id){
+  public String getId(){
     return id;
   }
 
@@ -17,7 +17,7 @@ public class Target {
     this.name = name;
   }
 
-  public String getName(String name){
+  public String getName(){
     return name;
   }
 
@@ -25,7 +25,7 @@ public class Target {
     this.email = email;
   }
 
-  public String getEmail(String email){
+  public String getEmail(){
     return email;
   }
 
