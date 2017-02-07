@@ -1,6 +1,9 @@
 ext.apachePoiVersion = '3.15'
+ext.groovyVersion = '2.4.8'
+ext.spockVersion = '1.1-groovy-2.4-rc-3'
 
 apply plugin: "java"
+apply plugin: 'groovy'
 apply plugin: "application"
 
 repositories {
@@ -9,4 +12,6 @@ repositories {
 
 dependencies {
   compile "org.apache.poi:poi:$apachePoiVersion"
+  testCompile "org.codehaus.groovy:groovy:$groovyVersion"
+  testCompile "org.spockframework:spock-core:$spockVersion"
 }
