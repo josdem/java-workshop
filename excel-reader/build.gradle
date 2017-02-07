@@ -1,9 +1,12 @@
+ext.apachePoiVersion = '3.15'
+
 apply plugin: "java"
 apply plugin: "application"
 
 repositories {
-    mavenCentral()
+  mavenCentral()
 }
 
 dependencies {
+  compile "org.apache.poi:poi:$apachePoiVersion"
 }
