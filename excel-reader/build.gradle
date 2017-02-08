@@ -12,6 +12,7 @@ repositories {
 
 dependencies {
   compile "org.apache.poi:poi:$apachePoiVersion"
+  compile "org.apache.poi:poi-ooxml:$apachePoiVersion"
   testCompile "org.codehaus.groovy:groovy:$groovyVersion"
   testCompile "org.spockframework:spock-core:$spockVersion"
 }
