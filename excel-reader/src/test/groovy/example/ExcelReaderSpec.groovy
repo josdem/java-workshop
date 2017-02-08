@@ -7,12 +7,10 @@ class ExcelReaderSpec extends Specification {
   ExcelReader excelReader = new ExcelReader()
 
 	void "should read Excel rows"(){
-		given:"Rows to read"
-      Integer numberOfRows = 5
-    and:"An excel file"
+    given:"An excel file"
       File excelFile = new File("src/test/resources/input.xlsx")
     when:"We read rows"
-      List<List<String>> result = excelReader.readRows(numberOfRows, excelFile)
+      List<List<String>> result = excelReader.readRows(excelFile)
     then:"We expect to get content"
     result.size() == 4
     result.get(0) == ['Name', 'Email', 'Ranking']

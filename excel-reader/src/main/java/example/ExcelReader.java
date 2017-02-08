@@ -17,7 +17,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelReader {
 
-	List<String> readRows(Integer numberOfRows, File excelFile){
+	List<String> readRows(File excelFile){
 		List content = new ArrayList<ArrayList<String>>();
     List line = new ArrayList<String>();
     try{
