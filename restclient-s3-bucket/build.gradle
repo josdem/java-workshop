@@ -1,5 +1,6 @@
 ext.springVersion = '4.3.5.RELEASE'
 ext.groovyVersion = '2.4.8'
+ext.apacheConfVersion = '2.0'
 ext.spockVersion = '1.1-groovy-2.4-rc-3'
 
 apply plugin: 'java'
@@ -26,6 +27,15 @@ repositories {
 dependencies {
 	compile "org.springframework:spring-context:$springVersion"
   compile "org.springframework:spring-core:$springVersion"
+  compile "org.apache.commons:commons-configuration2:$apacheConfVersion"
   testCompile "org.codehaus.groovy:groovy:$groovyVersion"
   testCompile "org.spockframework:spock-core:$spockVersion"
 }
+
+task settingEnvironment(type:Copy) {
+  from configurationDirectory
+  into 'src/main/resources'
+  include "rest.properties"  
+}
+
+processResources.dependsOn "settingEnvironment"
