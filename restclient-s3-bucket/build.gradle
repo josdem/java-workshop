@@ -1,0 +1,31 @@
+ext.springVersion = '4.3.5.RELEASE'
+ext.groovyVersion = '2.4.8'
+ext.spockVersion = '1.1-groovy-2.4-rc-3'
+
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'application'
+
+version = '0.0.1'
+
+task buildJar(type: Jar) {
+  manifest {
+    attributes 'Implementation-Title': 'REST client to get a file from S3 Bucket',
+    'Implementation-Version': version,
+    'Main-Class': 'example.Application'
+  }
+  baseName = project.name + '-all'
+  from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+  with jar
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+	compile "org.springframework:spring-context:$springVersion"
+  compile "org.springframework:spring-core:$springVersion"
+  testCompile "org.codehaus.groovy:groovy:$groovyVersion"
+  testCompile "org.spockframework:spock-core:$spockVersion"
+}
