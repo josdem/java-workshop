@@ -33,3 +33,17 @@ javac DateOperations.java
 java DateOperations
 ```
 
+Excel Reader
+-----------------------------------------------
+
+How to read an Excel file using Apache POI
+
+#### Read this as reference
+
+* http://josdem.io/techtalk/java/apache_poi_excel/
+
+#### To run the project
+
+```bash
+gradle test
+```
