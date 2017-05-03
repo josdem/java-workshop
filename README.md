@@ -47,3 +47,18 @@ How to read an Excel file using Apache POI
 ```bash
 gradle test
 ```
+
+Hello AWS Lambda
+--------------------------------------------
+
+Hello World using AWS Lambda
+
+#### Read this as reference
+
+* http://josdem.io/techtalk/java/hello_aws_lambda/
+
+#### To build the project
+
+```bash
+gradle buildJar
+```
