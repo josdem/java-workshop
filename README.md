@@ -26,7 +26,10 @@ A quick review to the `java.util.Date` API in Java 8
 #### To run the project
 
 ```bash
-`javac BetweenDays.java`
-`java BetweenDays`
+javac BetweenDays.java
+java BetweenDays
+
+javac DateOperations.java
+java DateOperations
 ```
 
