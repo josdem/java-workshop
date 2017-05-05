@@ -115,3 +115,29 @@ gradle buildJar
 ```bash
 java -jar properties-apache-commons-all-0.0.1.jar
 ```
+
+S3 AWS Lambda
+--------------------------------------------
+
+Read and copy files using AWS Lambda
+
+#### Read this as reference
+
+* http://josdem.io/techtalk/java/s3_aws_lambda/
+
+#### To build the project
+
+```bash
+gradle buildZip
+```
+
+#### To invoke the project
+
+```bash
+aws lambda invoke \
+--invocation-type Event \
+--function-name s3-aws-lambda \
+--region us-west-1 \
+--payload file://inputfile.txt \
+outputfile.txt
+```
