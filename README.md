@@ -94,3 +94,24 @@ Since Java 8 we have Lambda Expressions which are some kind of anonymous functio
 javac MainAnalyzer.java
 java MainAnalyzer
 ```
+
+Properties Apache Commons
+--------------------------------------------
+
+Generic configuration interface which enables a Java application to read configuration data
+
+#### Read this as reference
+
+* http://josdem.io/techtalk/java/configuration_apache_commons/
+
+#### To build the project
+
+```bash
+gradle buildJar
+```
+
+#### To run the project
+
+```bash
+java -jar properties-apache-commons-all-0.0.1.jar
+```
