@@ -78,3 +78,19 @@ Since Java 7 we can copy files in a easy way
 javac FileCopier.java
 java FileCopier
 ```
+
+Lambda Expressions
+--------------------------------------------
+
+Since Java 8 we have Lambda Expressions which are some kind of anonymous functions where we can use delegate in a easy way.
+
+#### Read this as reference
+
+* http://josdem.io/techtalk/java/lambda_expressions/
+
+#### To build the project
+
+```bash
+javac MainAnalyzer.java
+java MainAnalyzer
+```
