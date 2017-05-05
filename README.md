@@ -62,3 +62,19 @@ Hello World using AWS Lambda
 ```bash
 gradle buildJar
 ```
+
+Java NIO Copy
+--------------------------------------------
+
+Since Java 7 we can copy files in a easy way
+
+#### Read this as reference
+
+* http://josdem.io/techtalk/java/java_nio_copy/
+
+#### To build the project
+
+```bash
+javac FileCopier.java
+java FileCopier
+```
