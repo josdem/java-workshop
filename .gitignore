@@ -8,3 +8,4 @@ s3-aws-lambda/outputfile.txt
 s3-aws-lambda/gradle.properties
 **/gradle.properties
 s3-aws-lambda/src/main/resources/aws.properties
+mailbox-reader/src/main/resources/application.properties

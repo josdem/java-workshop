@@ -145,12 +145,6 @@ outputfile.txt
 GMail Mailbox Reader
 ------------------------------------
 
-#### Invoke Spock test as follow:
-
-```bash
-gradle test
-```
-
 #### Configuration
 
 In your computer's home directory: `${home}`, create a directory called: `.mailbox-reader` then inside create a file called `application.properties` with this content

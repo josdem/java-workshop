@@ -1,4 +1,4 @@
-def configurationDirectory = "${System.getProperty('user.home')}/.mailbox-reader"
+def configurationDirectory = "${System.getProperty('user.home')}/.mailboxreader"
 
 buildscript {
   ext {

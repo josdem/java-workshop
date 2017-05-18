@@ -44,20 +44,18 @@ class InboxReaderPop3 implements InboxReader {
 		emailFolder = store.getFolder('INBOX')
 		emailFolder.open(Folder.HOLDS_FOLDERS)
 		log.info "Inbox Type: ${emailFolder.getType()}"
-		log.info "HoldFolders Value: ${emailFolder.HOLDS_FOLDERS}"
-		log.info "Folders: ${store.getDefaultFolder().list('*')}"
 	}
 
 	void read(){
-		Message[] messages = emailFolder.getMessages();
-		log.info("messages.length---" + messages.length);
+		Message[] messages = emailFolder.getMessages()
+		log.info "Messages Length: ${messages.length}"
 
 		for (int i = 0; i < messages.length; i++) {
-			Message message = messages[i];
-			log.info("--------------------------------")
-			log.info("Email Number " + (i + 1))
-			log.info("From: " + message.getFrom()[0])
-			log.info("Subject: " + message.getSubject())
+			Message message = messages[i]
+			log.info '--------------------------------'
+			log.info "Email Number ${(i + 1)}"
+			log.info "From: ${message.getFrom()[0]}" 
+			log.info "Subject: ${message.getSubject()}"
 		}
 		emailFolder.close(false)
 	}
