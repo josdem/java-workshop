@@ -22,9 +22,9 @@ class InboxReaderPop3 implements InboxReader {
 	String username
 	@Value('${password}')
 	String password
-	@Value('${server}')
+	@Value('${pop3.server}')
 	String server
-	@Value('${port}')
+	@Value('${pop3.port}')
 	String port
 
 	Properties properties = new Properties()

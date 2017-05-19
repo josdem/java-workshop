@@ -2,9 +2,12 @@ package com.jos.dem.mailbox.reader
 
 import org.springframework.stereotype.Component
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.beans.factory.annotation.Value
 
 import com.jos.dem.mailbox.reader.service.InboxReader
+import com.jos.dem.mailbox.reader.service.impl.InboxReaderPop3
+import com.jos.dem.mailbox.reader.service.impl.InboxReaderImap
 
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
@@ -13,6 +16,7 @@ import org.slf4j.LoggerFactory
 class Launcher{
 
   @Autowired
+  @Qualifier('inboxReaderImap')
   InboxReader inboxReader
 
   Logger log = LoggerFactory.getLogger(this.class)
