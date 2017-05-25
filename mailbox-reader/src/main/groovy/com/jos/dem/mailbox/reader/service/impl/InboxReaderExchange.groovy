@@ -32,9 +32,9 @@ class InboxReaderExchange implements InboxReader {
 
 	private static final Integer MAX_ITEMS=50
 
-	@Value('${username}')
+	@Value('${ews.username}')
 	String username
-	@Value('${password}')
+	@Value('${ews.password}')
 	String password
 	@Value('${ews.server}')
 	String server
@@ -50,7 +50,7 @@ class InboxReaderExchange implements InboxReader {
 		service.setUrl(new URI(server))
 		ExchangeCredentials credentials = new WebCredentials(username, password, 'AUTH')
 		service.setCredentials(credentials)
-		service.autodiscoverUrl(mailbox,  new RedirectionUrlCallback(protocol))
+		service.autodiscoverUrl(username,  new RedirectionUrlCallback(protocol))
 	}
 
 

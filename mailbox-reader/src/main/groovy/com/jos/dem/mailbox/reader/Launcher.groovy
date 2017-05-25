@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Value
 import com.jos.dem.mailbox.reader.service.InboxReader
 import com.jos.dem.mailbox.reader.service.impl.InboxReaderPop3
 import com.jos.dem.mailbox.reader.service.impl.InboxReaderImap
+import com.jos.dem.mailbox.reader.service.impl.InboxReaderExchange
 
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
@@ -16,7 +17,7 @@ import org.slf4j.LoggerFactory
 class Launcher{
 
   @Autowired
-  @Qualifier('inboxReaderImap')
+  @Qualifier('inboxReaderExchange')
   InboxReader inboxReader
 
   Logger log = LoggerFactory.getLogger(this.class)
