@@ -142,7 +142,7 @@ aws lambda invoke \
 outputfile.txt
 ```
 
-GMail Mailbox Reader
+Mailbox Reader
 ------------------------------------
 
 #### Configuration
