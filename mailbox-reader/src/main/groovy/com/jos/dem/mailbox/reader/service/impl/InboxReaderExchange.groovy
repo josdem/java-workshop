@@ -56,8 +56,7 @@ class InboxReaderExchange implements InboxReader {
 
 	void read(){
 		Folder folder = Folder.bind(service, WellKnownFolderName.Inbox)
-		log.info "folderId: ${folder}"		
-		FindItemsResults<Item> results = service.findItems(folder.getId(), new ItemView(MAX_ITEMS))		
+		FindItemsResults<Item> results = service.findItems(folder.getId(), new ItemView(MAX_ITEMS))
 		for (Item item : results) {
 			EmailMessage emailMessage = EmailMessage.bind(service, item.getId())
 			log.info("Sender: ${emailMessage.getSender()}")
