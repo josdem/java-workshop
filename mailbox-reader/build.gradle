@@ -5,6 +5,7 @@ buildscript {
     springBootVersion = '1.5.1.RELEASE'
     cglibVersion = '3.2.4'
     javaMailVersion = '1.4'
+    ewsJavaApiVersion = '2.0'
   }
   repositories {
     mavenCentral()
@@ -33,6 +34,7 @@ dependencies {
 	compile 'org.springframework.boot:spring-boot-starter'
   compile 'org.codehaus.groovy:groovy'
   compile "javax.mail:mail:$javaMailVersion"
+  compile "com.microsoft.ews-java-api:ews-java-api:$ewsJavaApiVersion"
   testCompile 'org.springframework.boot:spring-boot-starter-test'
   testCompile 'org.spockframework:spock-spring'
   testCompile "cglib:cglib-nodep:$cglibVersion"
