@@ -22,7 +22,7 @@ import microsoft.exchange.webservices.data.core.enumeration.property.WellKnownFo
 
 import javax.annotation.PostConstruct
 
-import com.hp.mailbox.reader.service.InboxReader
+import com.jos.dem.mailbox.reader.service.InboxReader
 
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
@@ -48,7 +48,7 @@ class InboxReaderExchange implements InboxReader {
   @PostConstruct
 	void setup(){
 		service.setUrl(new URI(server))
-		ExchangeCredentials credentials = new WebCredentials(username, password, 'AUTH')
+		ExchangeCredentials credentials = new WebCredentials(username, password)
 		service.setCredentials(credentials)
 		service.autodiscoverUrl(username,  new RedirectionUrlCallback(protocol))
 	}
