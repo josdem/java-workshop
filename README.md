@@ -1,7 +1,7 @@
 CSV Transformer
 ----------------------------
 
-How to read and write a CSV file using Apache Commons CSV 
+How to read and write a CSV file using Apache Commons CSV
 
 #### Read this as reference
 
@@ -150,8 +150,16 @@ GMail Mailbox Reader
 In your computer's home directory: `${home}`, create a directory called: `.mailbox-reader` then inside create a file called `application.properties` with this content
 
 ```properties
-username=username@gmail.com
-password=yourpassword
+username=user@gmail.com
+password=secret
+pop3.server=pop.gmail.com
+pop3.port=995
+imap.server=imap.gmail.com
+imap.port=993
+ews.username=user@outlook.com
+ews.password=secret
+ews.server=https://exchange/EWS/Exchange.asmx
+ews.protocol=https://
 ```
 
 #### Build
@@ -169,13 +177,16 @@ gradle build
 #### Features
 
 * This approach is using Gmail account with IMAP enabled (Settings > Forwarding and POP/IMAP)
+* Using Exchange Web Services [EWS Java API](https://github.com/OfficeDev/ews-java-api)
 * Read body email usgin text/plain as ContentType
 * Read body email using  multipart/mixed as ContenType
 
 #### Read this as reference
 
 * http://josdem.io/techtalk/camel/mailbox_reader/
+* http://josdem.io/techtalk/java/mailbox_reader_pop3/
+* http://josdem.io/techtalk/java/mailbox_reader_imap/
+* http://josdem.io/techtalk/java/mailbox_reader_exchange/
 * http://josdem.io/techtalk/spring/spring_unit_testing_spock/
 * http://josdem.io/techtalk/spring/spring_boot/
-* http://josdem.io/techtalk/java/s3_aws_lambda/
 * http://josdem.io/techtalk/spring/spring_gradle/
