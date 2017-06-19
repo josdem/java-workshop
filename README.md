@@ -55,7 +55,7 @@ How to read filtered rows in Excel file using Apache POI
 
 #### Read this as reference
 
-* http://josdem.io/techtalk/java/apache_poi_excel/
+* http://josdem.io/techtalk/java/apache_poi_excel_filter_reader/
 
 #### To run the project
 
