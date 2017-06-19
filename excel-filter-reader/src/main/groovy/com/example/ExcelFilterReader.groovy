@@ -30,17 +30,17 @@ class ExcelFilterReader {
 						content.add(line)
 					}
 				}
-				} catch(FileNotFoundException fne){
-					throw new ExcelException(fne.getMessage(), fne)
-					} catch(IOException ioe){
-						throw new ExcelException(ioe.getMessage(), ioe)
-					}
+		} catch(FileNotFoundException fne){
+			  throw new ExcelException(fne.getMessage(), fne)
+		} catch(IOException ioe){
+				throw new ExcelException(ioe.getMessage(), ioe)
+		}
 
-					return content
-				}
+		return content
+  }
 
-				private Boolean isHidden(Row row){
-					row.getZeroHeight()
-				}
+  private Boolean isHidden(Row row){
+    row.getZeroHeight()
+  }
 
-			}
+}
