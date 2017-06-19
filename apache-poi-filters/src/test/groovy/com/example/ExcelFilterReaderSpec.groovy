@@ -14,7 +14,7 @@ class ExcelFilterReaderSpec extends Specification {
     when:"We read rows"
       List<List<String>> result = excelReader.readRows(numberOfRows, excelFile)
     then:"We expect to get content"
-    result.size() == 4
+    result.size() == 3
     result.get(0) == ['Name', 'Email', 'Ranking']
     result.get(1) == ['josdem','joseluis.delacruz@gmail.com','5.0']
     result.get(2) == ['martin','martinv@email.com','5.0']

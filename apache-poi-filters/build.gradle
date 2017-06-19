@@ -1,6 +1,8 @@
 buildscript {
 	ext {
 		springBootVersion = '1.5.1.RELEASE'
+		apachePoiVersion = '3.15'
+		spockVersion = '1.1-groovy-2.4-rc-3'
 	}
 	repositories {
 		mavenCentral()
@@ -11,11 +13,10 @@ buildscript {
 }
 
 apply plugin: 'groovy'
-apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
 jar {
-	baseName = 's3-reader-scheduler'
+	baseName = 'apache-filter-reader'
 	version = '0.0.1-SNAPSHOT'
 }
 
@@ -27,7 +28,10 @@ repositories {
 
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter')
-	compile('org.codehaus.groovy:groovy')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile 'org.springframework.boot:spring-boot-starter'
+	compile 'org.codehaus.groovy:groovy'
+	compile "org.apache.poi:poi:$apachePoiVersion"
+	compile "org.apache.poi:poi-ooxml:$apachePoiVersion"
+	testCompile "org.spockframework:spock-core:$spockVersion"
+	testCompile 'org.springframework.boot:spring-boot-starter-test'
 }
