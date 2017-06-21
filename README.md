@@ -109,6 +109,21 @@ Since Java 8 we have Lambda Expressions which are some kind of anonymous functio
 javac MainAnalyzer.java
 java MainAnalyzer
 ```
+Lambda Expressions
+--------------------------------------------
+
+Since Java 8 we have Lambda Expressions which are some kind of anonymous functions where we can use delegate in a easy way.
+
+#### Read this as reference
+
+* http://josdem.io/techtalk/java/lambda_expressions/
+
+#### To build the project
+
+```bash
+javac MainAnalyzer.java
+java MainAnalyzer
+```
 
 Properties Apache Commons
 --------------------------------------------
@@ -205,3 +220,20 @@ gradle build
 * http://josdem.io/techtalk/spring/spring_unit_testing_spock/
 * http://josdem.io/techtalk/spring/spring_boot/
 * http://josdem.io/techtalk/spring/spring_gradle/
+
+Stream Filters
+--------------------------------------------
+
+A stream represents a sequence of elements and supports different operations to perform calculations in those elements, here we review the filters:
+
+#### Read this as reference
+
+* http://josdem.io/techtalk/java/stream_filters/
+
+#### To build the project
+
+```bash
+javac ${JAVA_PROGRAM}.java
+java -ea ${JAVA_PROGRAM}
+```
+
