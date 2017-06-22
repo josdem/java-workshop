@@ -6,7 +6,7 @@ public class StreamToListConverter {
 
   private List<String> parse(){
     return Arrays.asList("Java", "C++", "Lisp", "Haskell").
-      stream().filter( it -> it.length() == 4 ).collect(Collectors.<String>toList());
+      stream().filter( it -> it.length() == 4 ).collect(Collectors.toList());
   }
 
   public static void main(String[] args){

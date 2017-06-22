@@ -7,7 +7,7 @@ public class StringFilter {
   private List<String> parse(){
     return Arrays.asList("Java", "C++", "Lisp", "Haskell").
       stream().filter( p -> p.startsWith("J")).
-      collect(Collectors.<String>toList());
+      collect(Collectors.toList());
   }
 
   public static void main(String[] args){
