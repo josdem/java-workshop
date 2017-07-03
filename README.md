@@ -221,6 +221,22 @@ gradle build
 * http://josdem.io/techtalk/spring/spring_boot/
 * http://josdem.io/techtalk/spring/spring_gradle/
 
+Stream
+--------------------------------------------
+
+Stream interface is defined in `java.util.stream package`. In Java 8, collections will start having methods that return Stream. Streams support Aggregate Operations. The common aggregate operations are filter, map, reduce, find, match and sort.
+
+#### Read this as reference
+
+* http://josdem.io/techtalk/java/streams/
+
+#### To build the project
+
+```bash
+javac ${JAVA_PROGRAM}.java
+java -ea ${JAVA_PROGRAM}
+```
+
 Stream Filters
 --------------------------------------------
 
@@ -229,6 +245,22 @@ A stream represents a sequence of elements and supports different operations to 
 #### Read this as reference
 
 * http://josdem.io/techtalk/java/stream_filters/
+
+#### To build the project
+
+```bash
+javac ${JAVA_PROGRAM}.java
+java -ea ${JAVA_PROGRAM}
+```
+
+Stream Collectors
+--------------------------------------------
+
+How use collectors over streams to group by, concatenate, map and list.
+
+#### Read this as reference
+
+* http://josdem.io/techtalk/java/stream_collectors/
 
 #### To build the project
 
