@@ -9,7 +9,7 @@ class StreamReductor {
   }
 
   public static void main(String[] args){
-    List<String> nicknames = Arrays.asList("josdem","trip","erich","martinvilegas","skuarch");
+    List<String> nicknames = Arrays.asList("josdem","tgrip","erich","martinvilegas","skuarch");
     Optional<String> result = new StreamReductor().getLargestName(nicknames);
     assert "martinvilegas" == result.get();
   }

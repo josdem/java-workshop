@@ -9,7 +9,7 @@ public class FirstFinder {
   }
 
   public static void main(String[] args){
-    List<String> nicknames = Arrays.asList("josdem","trip","erich","martinvilegas","skuarch");
+    List<String> nicknames = Arrays.asList("josdem","tgrip","erich","martinvilegas","skuarch");
     String result = new FirstFinder().findFirstLongName(nicknames);
     assert "martinvilegas" == result;
   }
