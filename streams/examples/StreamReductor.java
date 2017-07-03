@@ -1,8 +1,6 @@
 import java.util.List;
 import java.util.Arrays;
 import java.util.Optional;
-import java.util.OptionalInt;
-import java.util.function.Function;
 
 class StreamReductor {
 
