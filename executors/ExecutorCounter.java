@@ -17,13 +17,12 @@ public class ExecutorCounter {
 	}
 
 	private synchronized void incrementSync() {
-		System.out.println("count: " + count);
+		System.out.println("I have been saying hello: " + count + " times");
 		count++;
 	}
 	
 	public static void main(String[] args) throws InterruptedException {
 		Integer result = new ExecutorCounter().start();
-		System.out.println(result);
 	}
 
 }
