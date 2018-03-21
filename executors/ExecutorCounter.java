@@ -8,23 +8,20 @@ public class ExecutorCounter {
 	private Integer count = 0;
 	private ExecutorService executor = Executors.newFixedThreadPool(2);
 
-	private Integer start(){
-		IntStream.range(0, 10000)
-    .forEach(i -> executor.submit(this::incrementSync));
+	private Integer start() throws InterruptedException {
+		IntStream.range(0, 10).forEach(i -> executor.submit(this::incrementSync));
 		executor.shutdown();
-		try {
-    	executor.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
-    } catch (InterruptedException e) {
-    	System.out.println("Exception:" + e.getMessage());
-    }
+
+		executor.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
 		return count;
 	}
 
 	private synchronized void incrementSync() {
+		System.out.println("count: " + count);
 		count++;
 	}
 	
-	public static void main(String[] args){
+	public static void main(String[] args) throws InterruptedException {
 		Integer result = new ExecutorCounter().start();
 		System.out.println(result);
 	}
