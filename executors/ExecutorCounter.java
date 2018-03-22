@@ -18,7 +18,7 @@ public class ExecutorCounter {
 		return count;
 	}
 
-	private void incrementSync() {
+	private synchronized void incrementSync() {
 		count++;
 		System.out.println("I have been saying hello: " + count + " times");
 	}

@@ -14,6 +14,8 @@ import java.util.stream.Collectors;
 
 public class ExecutorFileReader {
 
+	private final static Integer MAX_PERIOD_TIME = 30;
+
 	private ExecutorService executor = Executors.newSingleThreadExecutor();
 	private	List<String> result = new ArrayList<String>();
 
@@ -25,7 +27,7 @@ public class ExecutorFileReader {
     scanner.close();
 		executor.shutdown();
 		try {
-    	executor.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
+    	executor.awaitTermination(MAX_PERIOD_TIME, TimeUnit.SECONDS);
     } catch (InterruptedException e) {
     	System.out.println("Exception:" + e.getMessage());
     }
