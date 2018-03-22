@@ -5,24 +5,26 @@ import java.util.concurrent.ExecutorService;
 
 public class ExecutorCounter {
 
+	private final static Integer MAX_PERIOD_TIME = 30;
+
 	private Integer count = 0;
-	private ExecutorService executor = Executors.newFixedThreadPool(2);
+	private ExecutorService executor = Executors.newFixedThreadPool(3);
 
 	private Integer start() throws InterruptedException {
-		IntStream.range(0, 10).forEach(i -> executor.submit(this::incrementSync));
+		IntStream.range(0, 3).forEach(i -> executor.submit(this::incrementSync));
 		executor.shutdown();
 
-		executor.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
+		executor.awaitTermination(MAX_PERIOD_TIME, TimeUnit.SECONDS);
 		return count;
 	}
 
-	private synchronized void incrementSync() {
-		System.out.println("I have been saying hello: " + count + " times");
+	private void incrementSync() {
 		count++;
+		System.out.println("I have been saying hello: " + count + " times");
 	}
 	
 	public static void main(String[] args) throws InterruptedException {
-		Integer result = new ExecutorCounter().start();
+		new ExecutorCounter().start();
 	}
 
 }
