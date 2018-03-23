@@ -17,7 +17,7 @@ public class ExecutorCallable {
 		executor.shutdown();
 
 		System.out.println("I have been sleeping: " + result + " seconds");
-    executor.awaitTermination(30, TimeUnit.SECONDS);
+    executor.awaitTermination(MAX_PERIOD_TIME, TimeUnit.SECONDS);
   }
 
   public static void main(String[] args) throws InterruptedException, ExecutionException {
