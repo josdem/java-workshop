@@ -12,11 +12,11 @@ public class ExecutorCallableCounter {
   private ExecutorService executor = Executors.newFixedThreadPool(3);
 
   private void start() throws InterruptedException, ExecutionException {
-    Future<Integer> callFuture = executor.submit(new CallableThread());
-    final Integer result = callFuture.get();
+    Future<Integer> future = executor.submit(new CallableThread());
+    final Integer result = future.get();
 		executor.shutdown();
 
-		System.out.println("I have been counting: " + result + " times");
+		System.out.println("I have been sleeping: " + result + " seconds");
     executor.awaitTermination(30, TimeUnit.SECONDS);
   }
 
@@ -28,12 +28,10 @@ public class ExecutorCallableCounter {
 class CallableThread implements Callable<Integer> {
 
   @Override
-  public Integer call(){
-    Integer counter = 0;
-    while(counter < 5){
-      counter++;
-    }
-    return counter;
+  public Integer call() throws InterruptedException{
+    final Integer wait = 3;
+    TimeUnit.SECONDS.sleep(wait);
+    return wait;
   }
 
 }
