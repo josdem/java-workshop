@@ -4,8 +4,6 @@ import java.util.concurrent.CompletableFuture;
 
 public class CompletableFutureAsynchronous {
 
-  private final static Integer WAITING_TIME = 3;
-
   private void start() throws InterruptedException, ExecutionException {
     CompletableFuture<Integer> completableFuture  = CompletableFuture.completedFuture(3).thenApplyAsync(wait -> {
       try{
