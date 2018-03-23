@@ -21,7 +21,7 @@ public class ExecutorCallable {
   }
 
   public static void main(String[] args) throws InterruptedException, ExecutionException {
-    new ExecutorCallableCounter().start();
+    new ExecutorCallable().start();
   }
 }
 
