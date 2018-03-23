@@ -247,10 +247,27 @@ How use collectors over streams to group by, concatenate, map and list.
 
 * http://josdem.io/techtalk/java/stream_collectors/
 
-#### To build the project
+#### To run the project
 
 ```bash
 javac ${JAVA_PROGRAM}.java
 java -ea ${JAVA_PROGRAM}
 ```
+
+Executors
+--------------------------------------------
+
+How use Executors, Callable and Futures
+
+#### Read this as reference
+
+* http://josdem.io/techtalk/java/executors/
+
+#### To run the project
+
+```bash
+javac ${JAVA_PROGRAM}.java
+java ${JAVA_PROGRAM}
+```
+
 
