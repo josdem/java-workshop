@@ -5,7 +5,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ExecutionException;
 
-public class ExecutorCallableCounter {
+public class ExecutorCallable {
 
   private final static Integer MAX_PERIOD_TIME = 30;
 
