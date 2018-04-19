@@ -11,4 +11,14 @@ class GenericsTypeSpec extends Specification{
       'josdem' == type.get();  
   }
 
-}
+  void "should support autoboxing"(){
+    given:'A generic type'
+      GenericType type = new GenericType()
+    when:'I create a string and integer type'
+      type.set('josdem');
+      type.set(7);
+    then:'I expect to get the string'
+      7 == type.get();
+  }
+
+} 
