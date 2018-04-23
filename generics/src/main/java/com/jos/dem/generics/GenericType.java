@@ -1,3 +1,5 @@
+package com.jos.dem.generics;
+
 public class GenericType<T> {
 
   private T type;

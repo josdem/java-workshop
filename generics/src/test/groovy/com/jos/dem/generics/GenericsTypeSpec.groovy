@@ -1,3 +1,5 @@
+package com.jos.dem.generics
+
 import spock.lang.Specification
 
 class GenericsTypeSpec extends Specification{
