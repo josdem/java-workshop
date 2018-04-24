@@ -1,11 +1,11 @@
 package com.jos.dem.generics;
 
-public class NaturalNumber<T extends Integer> {
+public class NaturalNumber<T extends Number> {
   private T number;
 
   public NaturalNumber(T number){
     this.number = number;
-    if(number < 0 ){
+    if(number.intValue() < 0 ){
       throw new IllegalArgumentException();
     }
   }
