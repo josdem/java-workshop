@@ -1,5 +1,6 @@
 package com.jos.dem.generics;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.Test;
@@ -15,6 +16,12 @@ public class NaturalNumberTest {
   public void shouldKnowIfIsEven(){
     NaturalNumber naturalNumber = new NaturalNumber(2);
     assertTrue(naturalNumber.isEven());
+  }
+
+  @Test
+  public void shouldKnowIfIsNotEven(){
+    NaturalNumber naturalNumber = new NaturalNumber(1);
+    assertFalse(naturalNumber.isEven());
   }
   
 }
