@@ -12,9 +12,4 @@ public class GenericType<T> {
     this.type = type;
   }
 
-  public static void main(String[] args){
-    GenericType<String> type = new GenericType<String>();
-    type.set("josdem");
-  }
-
 }
