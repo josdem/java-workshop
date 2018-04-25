@@ -1,4 +1,4 @@
- package com.jos.dem.generics;
+package com.jos.dem.generics;
 
 import java.util.List;
 

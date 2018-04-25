@@ -25,5 +25,4 @@ public class CollectionAdderTest {
     assertEquals(new Double(33), result);
   }
 
-
 }

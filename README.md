@@ -270,4 +270,24 @@ javac ${JAVA_PROGRAM}.java
 java ${JAVA_PROGRAM}
 ```
 
+Generics
+--------------------------------------------
 
+How we can use Generics in Java. 
+
+#### Read this as reference
+
+* http://josdem.io/techtalk/java/generics/
+
+To run the code:
+
+```bash
+javac ${JAVA_PROGRAM}.java
+java -ea ${JAVA_PROGRAM}
+```
+
+To test the code:
+
+```bash
+gradle test
+```
