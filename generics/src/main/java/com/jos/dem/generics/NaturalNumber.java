@@ -1,9 +1,9 @@
 package com.jos.dem.generics;
 
-public class NaturalNumber<T extends Number> {
-  private T number;
+public class NaturalNumber<N extends Number> {
+  private N number;
 
-  public NaturalNumber(T number){
+  public NaturalNumber(N number){
     this.number = number;
     if(number.intValue() < 0 ){
       throw new IllegalArgumentException();
