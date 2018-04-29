@@ -13,13 +13,24 @@ public class PredicateTest {
 		new Person("josdem", 5), 
 		new Person("tgrip", 4), 
 		new Person("edzero", 3), 
-		new Person("jeduan", 2), 
+		new Person("jeduan", 5), 
 		new Person("siedrix", 5)
 	);
 
 	@Test
 	public void shouldGetPersonsWithFourInRankingOrMore(){
 		Predicate<Person> isHighRanked = person -> person.getRanking() >= 4;
-		assertEquals(3, persons.stream().filter(isHighRanked).count());
+		assertEquals(4, persons.stream().filter(isHighRanked).count());
 	}
+
+	@Test
+	public void shouldGetPersonsHihgRankedAndStartsWithJ(){
+		Predicate<Person> isHighRanked = person -> person.getRanking() >= 4;
+		Predicate<Person> startsWithJ = person -> person.getNickname().startsWith("j");
+		assertEquals(2, persons.stream()
+										.filter(isHighRanked)
+										.filter(startsWithJ)
+										.count());
+	}
+
 }
