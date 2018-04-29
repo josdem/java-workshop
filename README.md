@@ -94,22 +94,6 @@ javac FileCopier.java
 java FileCopier
 ```
 
-Lambda Expressions
---------------------------------------------
-
-Since Java 8 we have Lambda Expressions which are some kind of anonymous functions where we can use delegate in a easy way.
-
-#### Read this as reference
-
-* http://josdem.io/techtalk/java/lambda_expressions/
-
-#### To build the project
-
-```bash
-javac MainAnalyzer.java
-java MainAnalyzer
-```
-
 Properties Apache Commons
 --------------------------------------------
 
@@ -287,6 +271,43 @@ java -ea ${JAVA_PROGRAM}
 ```
 
 To test the code:
+
+```bash
+gradle test
+```
+
+Functional Interfaces
+--------------------------------------------
+
+A functional interface in Java is any with @FunctionalInterface annotation and with SAM(Single Abstract Method). It was introduced to facilitate [Lambda expressions](http://josdem.io/techtalk/java/lambda_expressions/). Since a lambda function can only provide the implementation for one method, it is mandatory for the functional interfaces to have only one abstract method.
+
+#### Read this as reference
+
+* http://josdem.io/techtalk/java/functional_interfaces/
+
+#### To run the code
+
+```bash
+javac ConsumerExample.java
+java ConsumerExample
+```
+
+#### To test the code
+
+```bash
+gradle test
+```
+
+Lambda Expressions
+--------------------------------------------
+
+Since Java 8 we have Lambda expressions which is a function defined under some interface contract and the main purpose is to implement functional programming in Java.
+
+#### Read this as reference
+
+* http://josdem.io/techtalk/java/lambda_expressions/
+
+#### To test the code
 
 ```bash
 gradle test
