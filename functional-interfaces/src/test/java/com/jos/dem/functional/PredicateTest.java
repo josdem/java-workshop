@@ -29,8 +29,8 @@ public class PredicateTest {
 		Predicate<Person> startsWithJ = person -> person.getNickname().startsWith("j");
 		assertEquals(2, persons.stream()
 										.filter(isHighRanked)
-										.filter(startsWithJ)
-										.count());
+                    .filter(startsWithJ)
+                    .count());
 	}
 
 }
