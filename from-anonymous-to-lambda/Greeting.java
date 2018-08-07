@@ -1,5 +1,5 @@
 public interface Greeting {
 
-  String getMessage();
+  String sayHello();
 
 }

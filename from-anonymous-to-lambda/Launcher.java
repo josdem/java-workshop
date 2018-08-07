@@ -1,20 +1,22 @@
 public class Launcher {
 
   public String getMessage(){
-    final String greeting = new Greeting() {
 
+    new Greeting() {
       @Override
       public String sayHello() {
         return "Hello World!";
       }
     };
 
-    return greeting;
+    return "Hello!";
+
   }
 
   public static void main(String[] args){
     String message = new Launcher().getMessage();
-    assert("Hello World!", message);
+    System.out.println("message: " + message);
+    assert "Hello World!" == message;
   }
 
 }
