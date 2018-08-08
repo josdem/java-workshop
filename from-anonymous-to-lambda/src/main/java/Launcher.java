@@ -1,7 +1,8 @@
 public class Launcher {
 
-  public static void main(String[] args){
-    String message = new HelloWorld().call({
+  private String run(){
+
+    new HelloWorld().call(new Greeting() {
 
       @Override
       public String hello() {
@@ -9,6 +10,11 @@ public class Launcher {
       }
 
     });
+
+  }
+
+  public static void main(String[] args){
+    String message = new Launcher().run();
     System.out.println("message: " + message);
     assert "Hello World!" == message;
   }
