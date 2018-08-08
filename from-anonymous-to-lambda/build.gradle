@@ -1,5 +1,4 @@
 apply plugin: "java"
-apply plugin: "application"
 
 repositories {
   mavenCentral()
@@ -8,4 +7,12 @@ repositories {
 dependencies {
   testCompile 'org.junit.jupiter:junit-jupiter-api:5.2.0'
   testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.2.0'
+}
+
+test {
+  useJUnitPlatform()
+
+  reports {
+    html.enabled = true
+  }
 }
