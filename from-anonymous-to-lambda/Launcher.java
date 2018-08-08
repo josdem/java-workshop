@@ -1,20 +1,14 @@
 public class Launcher {
 
-  public String getMessage(){
+  public static void main(String[] args){
+    String message = new HelloWorld().call({
 
-    new Greeting() {
       @Override
-      public String sayHello() {
+      public String hello() {
         return "Hello World!";
       }
-    };
 
-    return "Hello!";
-
-  }
-
-  public static void main(String[] args){
-    String message = new Launcher().getMessage();
+    });
     System.out.println("message: " + message);
     assert "Hello World!" == message;
   }

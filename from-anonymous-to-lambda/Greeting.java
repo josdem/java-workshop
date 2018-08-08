@@ -1,5 +1,6 @@
+@FunctionalInterface
 public interface Greeting {
 
-  String sayHello();
+  String hello(final String name);
 
 }
