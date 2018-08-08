@@ -1,3 +1,5 @@
+package com.jos.dem.anonymous;
+
 public class HelloWorld implements GreetingService {
 
   @Override
