@@ -15,7 +15,7 @@ public void GreetingTest {
     final String greeting = greetingService.call(new Greeting() {
       @Override
       public String hello() {
-        return "Hello World!";
+        return "Hello World";
       }
     });
 
