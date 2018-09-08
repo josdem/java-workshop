@@ -10,6 +10,7 @@
 **build/
 **bin/
 **.gradle/
+**target/
 s3-aws-lambda/outputfile.txt
 s3-aws-lambda/src/main/resources/aws.properties
 mailbox-reader/src/main/resources/application.properties
