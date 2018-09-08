@@ -257,7 +257,7 @@ java ${JAVA_PROGRAM}
 Generics
 --------------------------------------------
 
-How we can use Generics in Java. 
+How we can use Generics in Java.
 
 #### Read this as reference
 
@@ -292,11 +292,18 @@ javac ConsumerExample.java
 java ConsumerExample
 ```
 
-#### To test the code
+#### To test the code using Gradle
 
 ```bash
 gradle test
 ```
+
+#### To test the code using Maven
+
+```bash
+mvn test
+```
+
 
 Lambda Expressions
 --------------------------------------------
