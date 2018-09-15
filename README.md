@@ -314,8 +314,14 @@ Since Java 8 we have Lambda expressions which is a function defined under some i
 
 * http://josdem.io/techtalk/java/lambda_expressions/
 
-#### To test the code
+#### To test the code using Gradle
 
 ```bash
 gradle test
+```
+
+#### To test the code using Maven
+
+```bash
+mvn test
 ```
