@@ -18,9 +18,9 @@ public class ListSorter {
 	  );
 
     List<BigDecimal> result = new ListSorter().sort(prices);
-    assert 5 == result.size();
-    assert new BigDecimal("9.50") == result.get(0);
-    assert new BigDecimal("41.60") == result.get(4);
+    assert 4 == result.size();
+    assert new BigDecimal("9.50").equals(result.get(0));
+    assert new BigDecimal("41.60").equals(result.get(3));
   }
-  	
+
 }
