@@ -2,24 +2,25 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.CompletableFuture;
 
-public class CompletableFutureAsynchronous {
+public class CompletableFutureSupplyAsync {
 
   private void start() throws InterruptedException, ExecutionException {
-    CompletableFuture<Integer> completableFuture  = CompletableFuture.completedFuture(3).thenApplyAsync(wait -> {
+    CompletableFuture<String> completableFuture  = CompletableFuture.supplyAsync( () -> {
       try{
-        TimeUnit.SECONDS.sleep(wait);        
+        TimeUnit.SECONDS.sleep(3);
       } catch(InterruptedException ie){
         System.out.println("InterruptedException: " + ie.getMessage());
       }
-      return wait;
+      return "3 seconds";
+    }).thenApply(message -> {
+      return "I have been sleeping " + message;
     });
-
-    final Integer result = completableFuture.get();
-		System.out.println("I have been sleeping: " + result + " seconds");
+    System.out.println(completableFuture.get());
   }
 
   public static void main(String[] args) throws InterruptedException, ExecutionException {
-    new CompletableFutureAsynchronous().start();
+    new CompletableFutureSupplyAsync().start();
   }
+
 }
 
