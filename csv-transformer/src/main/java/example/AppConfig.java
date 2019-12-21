@@ -6,9 +6,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class AppConfig {
 
-	@Bean
-	public CsvFileReader reader() {
-		return new CsvFileReader();
-	}
+  @Bean
+  public CsvFileReader reader() {
+    return new CsvFileReader();
+  }
 
 }

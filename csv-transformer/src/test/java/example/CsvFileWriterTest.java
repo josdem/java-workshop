@@ -20,17 +20,17 @@ class CsvFileWriterTest {
   @DisplayName("Should write csv file")
   void shouldWriteCsvFile() throws Exception {
     String path = "src/test/resources/csv.txt";
-    Target t1 = new Target("1","eric","erich@email.com");
-    Target t2 = new Target("2","martin","martinv@email.com");
-    Target t3 = new Target("3","josdem","josdem@email.com");
+    Target t1 = new Target("1", "eric", "erich@email.com");
+    Target t2 = new Target("2", "martin", "martinv@email.com");
+    Target t3 = new Target("3", "josdem", "josdem@email.com");
 
-    List<Target> targets = Arrays.asList(t1,t2,t3);
+    List<Target> targets = Arrays.asList(t1, t2, t3);
 
-    writer.write(targets,path);
+    writer.write(targets, path);
 
     Files.lines(Paths.get(path)).forEach(line ->
         assertTrue(line.contains("email"), "should contains email word")
-        );
+    );
 
   }
 

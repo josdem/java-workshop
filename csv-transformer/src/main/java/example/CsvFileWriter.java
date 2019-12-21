@@ -13,13 +13,14 @@ public class CsvFileWriter {
 
   private static final String NEW_LINE_SEPARATOR = "\n";
 
-  public void write(List<Target> targets, String path){
+  public void write(List<Target> targets, String path) {
     List elements = new ArrayList<List<String>>();
-    try{
+    try {
       FileWriter output = new FileWriter(path);
-      CSVPrinter printer = CSVFormat.TDF.withHeader("id", "name", "email").withRecordSeparator(NEW_LINE_SEPARATOR).print(output);
+      CSVPrinter printer = CSVFormat.TDF.withHeader("id", "name", "email")
+          .withRecordSeparator(NEW_LINE_SEPARATOR).print(output);
 
-      for(Target target: targets){
+      for (Target target : targets) {
         List<String> record = new ArrayList<String>();
         record.add(target.getId());
         record.add(target.getName());
@@ -29,7 +30,7 @@ public class CsvFileWriter {
 
       output.flush();
       output.close();
-    } catch(IOException ioe){
+    } catch (IOException ioe) {
       throw new CsvException(ioe.getMessage());
     }
   }

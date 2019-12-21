@@ -10,20 +10,20 @@ import org.apache.commons.csv.CSVRecord;
 
 public class CsvFileReader {
 
-  public List<List<String>> read(String path){
+  public List<List<String>> read(String path) {
     List elements = new ArrayList<List<String>>();
-    try{
+    try {
       FileReader input = new FileReader(path);
       Iterable<CSVRecord> records = CSVFormat.TDF.withHeader("id", "name", "email").parse(input);
 
       records.forEach(record -> {
-            List<String> row = new ArrayList<String>();
-            row.add(record.get("id"));
-            row.add(record.get("name"));
-            row.add(record.get("email"));
-            elements.add(row);
-          });
-    } catch(IOException ioe){
+        List<String> row = new ArrayList<String>();
+        row.add(record.get("id"));
+        row.add(record.get("name"));
+        row.add(record.get("email"));
+        elements.add(row);
+      });
+    } catch (IOException ioe) {
       throw new CsvException(ioe.getMessage());
     }
     return elements;
