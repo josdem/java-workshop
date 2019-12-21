@@ -1,9 +1,11 @@
 package example;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
+import java.util.Arrays;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
@@ -19,7 +21,8 @@ class CsvFileReaderTest {
     List<List<String>> result = reader.read(path);
 
     assertAll("rows",
-        () -> assertEquals(4, result.size(), "should have four rows")
+        () -> assertEquals(4, result.size(), "should have four rows"),
+        () -> assertTrue(result.contains(Arrays.asList('id','name','email')), "should have header")
         );
   }
 
