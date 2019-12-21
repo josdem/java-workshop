@@ -3,6 +3,7 @@ ext.springVersion = '4.3.5.RELEASE'
 ext.apacheCSVVersion = '1.4'
 ext.groovyVersion = '2.4.8'
 ext.spockVersion = '1.1-groovy-2.4-rc-3'
+ext.junitJupiterVersion = '5.5.2'
 
 apply plugin: "java"
 apply plugin: 'groovy'
@@ -31,4 +32,10 @@ dependencies {
   compile "org.apache.commons:commons-csv:$apacheCSVVersion"
   testCompile "org.codehaus.groovy:groovy:$groovyVersion"
   testCompile "org.spockframework:spock-core:$spockVersion"
+  testImplementation "org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion"
+  testRuntime "org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion"
+}
+
+test {
+  useJUnitPlatform()
 }
