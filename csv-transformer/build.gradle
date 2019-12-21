@@ -1,5 +1,5 @@
 ext {
-  springVersion = '4.3.5.RELEASE'
+  springVersion = '5.2.2.RELEASE'
   apacheCSVVersion = '1.4'
   groovyVersion = '2.4.8'
   spockVersion = '1.1-groovy-2.4-rc-3'
