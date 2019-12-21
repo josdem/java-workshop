@@ -15,16 +15,14 @@ public class CsvFileReader {
     try{
       FileReader input = new FileReader(path);
       Iterable<CSVRecord> records = CSVFormat.TDF.withHeader("id", "name", "email").parse(input);
-      for (CSVRecord record : records) {
-        List<String> row = new ArrayList<String>();
-        String id = record.get("id");
-        String name = record.get("name");
-        String email = record.get("email");
-        row.add(id);
-        row.add(name);
-        row.add(email);
-        elements.add(row);
-      }
+
+      records.forEach(record -> {
+            List<String> row = new ArrayList<String>();
+            row.add(record.get("id"));
+            row.add(record.get("name"));
+            row.add(record.get("email"));
+            elements.add(row);
+          });
     } catch(IOException ioe){
       throw new CsvException(ioe.getMessage());
     }
