@@ -28,7 +28,9 @@ class CsvFileWriterTest {
 
     writer.write(targets,path);
 
-    Files.lines(Paths.get(path)).forEach(System.out::println);
+    Files.lines(Paths.get(path)).forEach(line ->
+        assertTrue(line.contains("email"), "should contains email word")
+        );
 
   }
 
