@@ -1,13 +1,10 @@
 ext {
   springVersion = '5.2.2.RELEASE'
-  apacheCSVVersion = '1.4'
-  groovyVersion = '2.4.8'
-  spockVersion = '1.1-groovy-2.4-rc-3'
+  apacheCSVVersion = '1.7'
   junitJupiterVersion = '5.5.2'
 }
 
 apply plugin: "java"
-apply plugin: 'groovy'
 apply plugin: "application"
 
 version = '1.0.0'
@@ -31,8 +28,6 @@ dependencies {
   implementation "org.springframework:spring-context:$springVersion"
   implementation "org.springframework:spring-core:$springVersion"
   implementation "org.apache.commons:commons-csv:$apacheCSVVersion"
-  testImplementation "org.codehaus.groovy:groovy:$groovyVersion"
-  testImplementation "org.spockframework:spock-core:$spockVersion"
   testImplementation "org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion"
   testRuntime "org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion"
 }
