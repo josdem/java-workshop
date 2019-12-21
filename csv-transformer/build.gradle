@@ -10,7 +10,7 @@ apply plugin: "java"
 apply plugin: 'groovy'
 apply plugin: "application"
 
-version = '0.0.1'
+version = '1.0.0'
 
 task buildJar(type: Jar) {
   manifest {
