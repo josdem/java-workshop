@@ -22,7 +22,10 @@ class CsvFileReaderTest {
 
     assertAll("rows",
         () -> assertEquals(4, result.size(), "should have four rows"),
-        () -> assertTrue(result.contains(Arrays.asList('id','name','email')), "should have header")
+        () -> assertTrue(result.contains(Arrays.asList("id","name","email")), "should have header"),
+        () -> assertTrue(result.contains(Arrays.asList("1","eric","erich@email.com")), "should contain Eric"),
+        () -> assertTrue(result.contains(Arrays.asList("2","martin","martinv@email.com")), "should contain Martin"),
+        () -> assertTrue(result.contains(Arrays.asList("3","josdem","josdem@email.com")), "should contain josdem")
         );
   }
 
