@@ -19,6 +19,12 @@ class OptionalTest {
   private static final Logger log = Logger.getLogger(OptionalTest.class.getName());
 
   @Test
+  void shouldCreateAnEmptyOptional() {
+    Optional<String> empty = Optional.empty();
+    assertFalse(empty.isPresent(), "should not be present");
+  }
+
+  @Test
   @DisplayName("should validate if is present")
   void shouldBePresent(){
     Optional<String> opt = Optional.ofNullable("josdem");
