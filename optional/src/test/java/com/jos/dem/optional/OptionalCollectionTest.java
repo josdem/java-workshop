@@ -26,7 +26,7 @@ class OptionalCollectionTest {
         .filter(it -> it.equals("developer"))
         .collect(Collectors.toList());
 
-    assertEquals(EXPECTED_DEVELOPERS, developers.size(), "should be two");
+    assertEquals(EXPECTED_DEVELOPERS, developers.size(), "should be two developers");
   }
 
 }

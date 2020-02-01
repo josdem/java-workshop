@@ -26,9 +26,16 @@ class OptionalTest {
 
   @Test
   @DisplayName("should validate if is present")
-  void shouldBePresent(){
-    Optional<String> opt = Optional.ofNullable("josdem");
+  void shouldBePresentBy(){
+    Optional<String> opt = Optional.of("josdem");
     assertTrue(opt.isPresent(), "should be present");
+  }
+
+  @Test
+  @DisplayName("should validate if is present by nullable")
+  void shouldBePresentByNullable(){
+    Optional<String> opt = Optional.ofNullable("josdem");
+    assertTrue(opt.isPresent(), "should be present by nullable");
   }
 
   @Test
