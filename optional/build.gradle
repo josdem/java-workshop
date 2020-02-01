@@ -11,3 +11,7 @@ dependencies {
   testImplementation "org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion"
   testRuntime "org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion"
 }
+
+test {
+  useJUnitPlatform()
+}
