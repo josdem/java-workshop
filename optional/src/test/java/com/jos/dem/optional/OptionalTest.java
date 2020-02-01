@@ -3,6 +3,7 @@ package com.jos.dem.optonal;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -44,6 +45,13 @@ class OptionalTest {
     String value = null;
     String name = Optional.ofNullable(value).orElse(StringUtils.EMPTY);
     assertEquals(StringUtils.EMPTY, name, "should be empty");
+  }
+
+  @Test
+  @DisplayName("should throw an exception")
+  void shouldThrowAnException(){
+    String value = null;
+    assertThrows(RuntimeException.class, () -> Optional.ofNullable(value).orElseThrow(RuntimeException::new), "should throw an exception");
   }
 
 }
