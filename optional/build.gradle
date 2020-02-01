@@ -10,6 +10,7 @@ repositories {
 dependencies {
   testImplementation "org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion"
   testRuntime "org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion"
+  implementation 'org.apache.commons:commons-lang3:3.9'
 }
 
 test {

@@ -1,8 +1,10 @@
 package com.jos.dem.optonal;
 
-
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.logging.Logger;
 
@@ -34,6 +36,14 @@ class OptionalTest {
   void shouldPrintValue(){
     Optional<String> opt = Optional.ofNullable("josdem");
     opt.ifPresent(value -> log.info("value: " + opt.get()));
+  }
+
+  @Test
+  @DisplayName("should display default value")
+  void shouldDisplayDefault(){
+    String value = null;
+    String name = Optional.ofNullable(value).orElse(StringUtils.EMPTY);
+    assertEquals(StringUtils.EMPTY, name, "should be empty");
   }
 
 }
