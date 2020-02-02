@@ -325,3 +325,19 @@ gradle test
 ```bash
 mvn test
 ```
+
+Using Optional
+--------------------------------------------
+
+Once called a Billion-dollar mistake. NullPointerException is by far one of the most frequent exceptions in Java and since version 8 we can use it as a way to avoid this exception. Optional is a container that can has a value or not.
+
+#### Read this as reference
+
+* https://josdem.io/techtalk/java/optional/
+
+#### To test
+
+```bash
+gradle test
+```
+
