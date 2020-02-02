@@ -1,4 +1,4 @@
-package com.jos.dem.optonal;
+package com.jos.dem.optional;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
