@@ -27,7 +27,8 @@ class OptionalTest {
   @Test
   @DisplayName("should validate if is present")
   void shouldBePresentBy(){
-    Optional<String> opt = Optional.of("josdem");
+    String nickname = "josdem";
+    Optional<String> opt = Optional.of(nickname);
     assertTrue(opt.isPresent(), "should be present");
   }
 

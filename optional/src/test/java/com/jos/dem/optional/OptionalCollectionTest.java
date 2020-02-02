@@ -14,14 +14,14 @@ import org.junit.jupiter.api.Test;
 
 class OptionalCollectionTest {
 
-  private static final int EXPECTED_NON_EMPTY = 3;
+  private static final int EXPECTED_VALUES = 3;
   private static final int EXPECTED_DEVELOPERS = 2;
 
   private static final Logger log = Logger.getLogger(OptionalCollectionTest .class.getName());
 
   @Test
   @DisplayName("should get a list non empty values")
-  void shouldGetList(){
+  void shouldGetNonEmptyValuesList(){
     List<Optional<String>> staff = Arrays.asList(
         Optional.of("developer"), Optional.of("designer"), Optional.empty(), Optional.of("developer"));
 
@@ -29,7 +29,7 @@ class OptionalCollectionTest {
         .flatMap(Optional::stream)
         .collect(Collectors.toList());
 
-    assertEquals(EXPECTED_NON_EMPTY, filteredStaff.size(), "should be 3 non empty values");
+    assertEquals(EXPECTED_VALUES, filteredStaff.size(), "should be 3 non empty values");
   }
 
   @Test
