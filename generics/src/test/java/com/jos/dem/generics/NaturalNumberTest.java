@@ -13,7 +13,7 @@ public class NaturalNumberTest {
   @Test
   @DisplayName("should throw an exception")
   public void shouldNotAcceptNegativeNumbers(){
-    assertThrows(IllegalArgumentException.class, () -> new NaturalNumber(-1), "should throw an exception");
+    assertThrows(IllegalArgumentException.class, () -> new NaturalNumber<Number>(-1), "should throw an exception");
   }
 
   @Test
