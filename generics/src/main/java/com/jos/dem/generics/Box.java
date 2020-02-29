@@ -1,7 +1,7 @@
 package com.jos.dem.generics;
 
 public class Box<T> {
-  private final T type;
+  private T type;
 
   public T get(){
     return this.type;

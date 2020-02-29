@@ -19,9 +19,8 @@ class BoxTest {
   @Test
   @DisplayName("shold contains an integer in the box")
   void shouldContainsAnIntegerInTheBox(){
-    Integer integer = new Integer(10);
     Box<Integer> box = new Box<Integer>();   
-    box.set(integer);
+    box.set(Integer.valueOf(10));
     assertEquals(10, box.get());
   }
 
