@@ -1,15 +1,19 @@
 package com.jos.dem.generics;
 
-import static org.junit.Assert.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
 
 public class NaturalNumberTest {
 
-  @Test(expected=IllegalArgumentException.class)
+  @Test
+  @DisplayName("should throw an exception")
   public void shouldNotAcceptNegativeNumbers(){
-    new NaturalNumber(-1);
+    assertThrows(IllegalArgumentException.class, () -> new NaturalNumber(-1), "should throw an exception");
   }
 
   @Test
