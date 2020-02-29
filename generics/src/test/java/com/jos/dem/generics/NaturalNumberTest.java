@@ -12,18 +12,20 @@ public class NaturalNumberTest {
 
   @Test
   @DisplayName("should throw an exception")
-  public void shouldNotAcceptNegativeNumbers(){
+  void shouldNotAcceptNegativeNumbers(){
     assertThrows(IllegalArgumentException.class, () -> new NaturalNumber<Number>(-1), "should throw an exception");
   }
 
   @Test
-  public void shouldKnowIfIsEven(){
+  @DisplayName("should know if is even")
+  void shouldKnowIfIsEven(){
     NaturalNumber<Number> naturalNumber = new NaturalNumber<Number>(2);
     assertTrue(naturalNumber.isEven());
   }
 
   @Test
-  public void shouldKnowIfIsNotEven(){
+  @DisplayName("should know if is odd")
+  void shouldKnowIfIsOdd(){
     NaturalNumber<Integer> naturalNumber = new NaturalNumber<Integer>(1);
     assertFalse(naturalNumber.isEven());
   }
