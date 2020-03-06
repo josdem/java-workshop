@@ -17,18 +17,18 @@ public class User {
     }
 
     public String getEmail(){
-        return email;
+        return this.email;
     }
 
     public String getPassword(){
-        return password;
+        return this.password;
     }
 
     public boolean isActive(){
-        return active;
+        return this.active;
     }
 
     public Optional<LocalDateTime> getLastLogin(){
-        return lastLogin;
+        return this.lastLogin;
     }
 }

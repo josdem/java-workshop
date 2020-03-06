@@ -1,9 +1,9 @@
 package com.jos.dem.immutable;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Test;
-import org.junit.DisplayName;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 class UserBuilderTest {
 
@@ -13,8 +13,8 @@ class UserBuilderTest {
         User user = new UserBuilder("josdem@email.com", "password")
             .active(true)
             .build();
-            
+
         assertEquals("josdem@email.com", user.getEmail(), "should have email");
-        assertEquals("password", user.getEmail(), "should have password");
+        assertEquals("password", user.getPassword(), "should have password");
     }
 }

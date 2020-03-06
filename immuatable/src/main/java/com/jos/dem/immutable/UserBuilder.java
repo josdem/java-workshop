@@ -30,6 +30,6 @@ public class UserBuilder {
         return new User(this.email,
                         this.password,
                         this.active,
-                        Optional.ofNullable(this.lastLogin));
+                        this.lastLogin);
     }
 }
