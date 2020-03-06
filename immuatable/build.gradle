@@ -1,15 +1,26 @@
 apply plugin: "java"
 apply plugin: "application"
 
-def junitJupiterVersion = '5.6.0'
+ext{
+  junitJupiterVersion = '5.6.0'
+  lombokVersion = '1.18.12'
+}
 
 sourceCompatibility = 12
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
 
 repositories {
   mavenCentral()
 }
 
 dependencies {
+  compileOnly "org.projectlombok:lombok:$lombokVersion"
+	annotationProcessor "org.projectlombok:lombok:$lombokVersion"
   testImplementation "org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion"
   testRuntime "org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion"
 }

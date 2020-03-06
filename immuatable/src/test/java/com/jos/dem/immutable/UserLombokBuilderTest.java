@@ -2,6 +2,7 @@ package com.jos.dem.immutable;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.Optional;
 import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -10,12 +11,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class UserBuilderTest {
+class UserLombokBuilderTest {
 
     @Test
     @DisplayName("should create basic user")
     void shouldCreateBasicUser() {
-        User user = new User.Builder("josdem@email.com", "password")
+        UserLombok user = UserLombok.builder()
+            .email("josdem@email.com")
+            .password("password")
             .build();
 
         assertEquals("josdem@email.com", user.getEmail(), "should have email");
@@ -26,7 +29,9 @@ class UserBuilderTest {
     @Test
     @DisplayName("should create an active user")
     void shouldCreateActiveUser() {
-        User user = new User.Builder("josdem@email.com", "password")
+        UserLombok user = UserLombok.builder()
+            .email("josdem@email.com")
+            .password("password")
             .active(true)
             .build();
 
@@ -38,9 +43,11 @@ class UserBuilderTest {
     @Test
     @DisplayName("should create an active user with last login date")
     void shouldCreateUserWithLastLoginTime() {
-        User user = new User.Builder("josdem@email.com", "password")
+        UserLombok user = UserLombok.builder()
+            .email("josdem@email.com")
+            .password("password")
             .active(true)
-            .lastLogin(LocalDateTime.now())
+            .lastLogin(Optional.of(LocalDateTime.now()))
             .build();
 
         assertEquals("josdem@email.com", user.getEmail(), "should have email");
