@@ -16,9 +16,7 @@ class UserLombokBuilderTest {
     @Test
     @DisplayName("should create basic user")
     void shouldCreateBasicUser() {
-        UserLombok user = UserLombok.builder()
-            .email("josdem@email.com")
-            .password("password")
+        UserLombok user = UserLombok.builder("josdem@email.com", "password")
             .build();
 
         assertEquals("josdem@email.com", user.getEmail(), "should have email");
@@ -29,9 +27,7 @@ class UserLombokBuilderTest {
     @Test
     @DisplayName("should create an active user")
     void shouldCreateActiveUser() {
-        UserLombok user = UserLombok.builder()
-            .email("josdem@email.com")
-            .password("password")
+        UserLombok user = UserLombok.builder("josdem@email.com", "password")
             .active(true)
             .build();
 
@@ -43,9 +39,7 @@ class UserLombokBuilderTest {
     @Test
     @DisplayName("should create an active user with last login date")
     void shouldCreateUserWithLastLoginTime() {
-        UserLombok user = UserLombok.builder()
-            .email("josdem@email.com")
-            .password("password")
+        UserLombok user = UserLombok.builder("josdem@email.com", "password")
             .active(true)
             .lastLogin(Optional.of(LocalDateTime.now()))
             .build();
