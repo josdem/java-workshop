@@ -1,4 +1,4 @@
-package com.jos.dem.immutable;
+package com.jos.dem.builder;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

@@ -1,4 +1,4 @@
-package com.jos.dem.immutable;
+package com.jos.dem.builder;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
