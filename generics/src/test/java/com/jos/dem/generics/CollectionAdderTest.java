@@ -2,27 +2,29 @@ package com.jos.dem.generics;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.Test;
+class CollectionAdderTest {
 
-public class CollectionAdderTest {
+  private CollectionAdder collectionAdder = new CollectionAdder();
 
   @Test
-  public void shouldSumIntegers(){
-    CollectionAdder collectionAdder = new CollectionAdder();
-    List<Integer> numbers = Arrays.asList(new Integer(10), new Integer(11), new Integer(12));
-    Double result = collectionAdder.sum(numbers);
-    assertEquals(new Double(33), result);
+  @DisplayName("should sum integers")
+  void shouldSumIntegers(){
+    List<Integer> numbers = Arrays.asList(Integer.valueOf(10), Integer.valueOf(11), Integer.valueOf(12));
+    assertEquals(Double.valueOf(33), collectionAdder.sum(numbers));
   }
 
   @Test
-  public void shouldSumDoubles(){
-    CollectionAdder collectionAdder = new CollectionAdder();
-    List<Double> numbers = Arrays.asList(new Double(10), new Double(11), new Double(12));
-    Double result = collectionAdder.sum(numbers);
-    assertEquals(new Double(33), result);
+  @DisplayName("should sum doubles")
+  void shouldSumDoubles(){
+    List<Double> numbers = Arrays.asList(Double.valueOf(10), Double.valueOf(11), Double.valueOf(12));
+    assertEquals(Double.valueOf(33), collectionAdder.sum(numbers));
   }
 
 }

@@ -11,12 +11,4 @@ public class Box<T> {
     this.type = type;
   }
 
-  public String getClassTypeName(){
-    return type.getClass().getName();
-  }
-
-  public <U extends Number> String getClassNumberName(U unit){
-    return unit.getClass().getName();
-  }
-
 }

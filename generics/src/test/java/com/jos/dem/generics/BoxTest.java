@@ -1,24 +1,27 @@
 package com.jos.dem.generics;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
-public class BoxTest {
+class BoxTest {
 
   @Test
-  public void shouldCreateAnStringBox(){
+  @DisplayName("should contains a string in the box")
+  void shouldConstainsAStringInTheBox(){
     String nickname = "josdem";    
     Box<String> box = new Box<String>();
     box.set(nickname);
-    assertEquals("java.lang.String", box.getClassTypeName());
+    assertEquals(nickname, box.get());
   }
 
   @Test
-  public void shouldCreateAnIntegerInspection(){    
-    Integer integer = new Integer(10);
+  @DisplayName("shold contains an integer in the box")
+  void shouldContainsAnIntegerInTheBox(){
     Box<Integer> box = new Box<Integer>();   
-    assertEquals("java.lang.Integer", box.getClassNumberName(integer));
+    box.set(Integer.valueOf(10));
+    assertEquals(10, box.get());
   }
 
 }

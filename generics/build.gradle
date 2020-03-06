@@ -1,16 +1,19 @@
 apply plugin: "java"
-apply plugin: "groovy"
 apply plugin: "application"
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+def junitJupiterVersion = '5.6.0'
+
+sourceCompatibility = 12
 
 repositories {
   mavenCentral()
 }
 
 dependencies {
-  implementation 'org.codehaus.groovy:groovy-all:2.4.14'
-  testCompile 'org.spockframework:spock-core:1.1-groovy-2.4'
-  testCompile 'org.junit.jupiter:junit-jupiter-engine:5.1.1'
+  testImplementation "org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion"
+  testRuntime "org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion"
+}
+
+test {
+  useJUnitPlatform()
 }
