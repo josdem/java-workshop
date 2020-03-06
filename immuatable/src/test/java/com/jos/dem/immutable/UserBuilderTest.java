@@ -1,6 +1,10 @@
 package com.jos.dem.immutable;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -30,6 +34,20 @@ class UserBuilderTest {
         assertEquals("josdem@email.com", user.getEmail(), "should have email");
         assertEquals("password", user.getPassword(), "should have password");
         assertTrue(user.isActive(), "should be active");
+    }
+
+    @Test
+    @DisplayName("should create an active user with last login date")
+    void shouldCreateUserWithLastLoginTime() {
+        User user = new User.Builder("josdem@email.com", "password")
+            .active(true)
+            .lastLogin(LocalDateTime.now())
+            .build();
+
+        assertEquals("josdem@email.com", user.getEmail(), "should have email");
+        assertEquals("password", user.getPassword(), "should have password");
+        assertTrue(user.isActive(), "should be active");
+        assertTrue(LocalDateTime.now().compareTo(user.getLastLogin().get()) > 0, "should be active");
     }
 
 }
