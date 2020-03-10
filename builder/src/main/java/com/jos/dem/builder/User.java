@@ -9,7 +9,7 @@ public class User {
     private final boolean active;
     private final Optional<LocalDateTime> lastLogin;
     
-    public User(String email, String password, boolean active, LocalDateTime lastLogin){
+    private User(String email, String password, boolean active, LocalDateTime lastLogin){
         this.email = email;
         this.password = password;
         this.active = active;
