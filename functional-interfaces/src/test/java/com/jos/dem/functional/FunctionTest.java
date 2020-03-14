@@ -44,14 +44,17 @@ public class FunctionTest {
 	@Test
 	@DisplayName("should filter by high ranked and starts with J")
 	void shouldFilterByHighRankedAndLetter(){
+		List<String> expectedPersons = Arrays.asList("josdem", "jeduan");
 		Function<Person, String> nicknames = (p) -> p.getNickname(); 
 
 		List<String> names = persons.stream()
 			.filter(p -> p.getRanking() > 4)
 			.map(nicknames)
+			.filter(n -> n.startsWith("j"))
 			.collect(Collectors.toList());
 
-		assertEquals(3, names.size(), "should have two names");
+		assertEquals(2, names.size(), "should have two names");
+		assertEquals(expectedPersons, names, "should have expected filtered persons");
 
 	}
 
