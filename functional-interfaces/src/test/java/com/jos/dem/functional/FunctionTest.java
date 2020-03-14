@@ -3,23 +3,31 @@ package com.jos.dem.functional;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.Function;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 
 public class FunctionTest {
 
+	private List<Person> persons = Arrays.asList(new Person("josdem", 5), new Person("tgrip", 4),
+			new Person("edzero", 3), new Person("jeduan", 5), new Person("siedrix", 5));
+
 	@Test
-  @DisplayName("Understands how to get string lenght")
-	public void shouldGetStringLenght(){
+	@DisplayName("Understands how to get string lenght")
+	public void shouldGetStringLenght() {
 		Integer expectedResult = 6;
 		Function<String, Integer> function = string -> string.length();
 		assertEquals(expectedResult, function.apply("josdem"));
 	}
 
 	@Test
-  @DisplayName("Understands how to get josdem lenght and if it is even")
-	public void shouldKnowIfNicknameLengthIsEven(){
+	@DisplayName("Understands how to get josdem lenght and if it is even")
+	public void shouldKnowIfNicknameLengthIsEven() {
 		Function<String, Integer> lenghtFunction = string -> string.length();
 		Function<Integer, Boolean> evenFunction = integer -> integer % 2 == 0;
 
@@ -27,10 +35,24 @@ public class FunctionTest {
 	}
 
 	@Test
-  @DisplayName("Understands how to get function identity")
-	public void shouldGetFunctionIdentity(){
+	@DisplayName("Understands how to get function identity")
+	public void shouldGetFunctionIdentity() {
 		Function<String, String> function = Function.identity();
 		assertEquals("josdem", function.apply("josdem"));
+	}
+
+	@Test
+	@DisplayName("should filter by high ranked and starts with J")
+	void shouldFilterByHighRankedAndLetter(){
+		Function<Person, String> nicknames = (p) -> p.getNickname(); 
+
+		List<String> names = persons.stream()
+			.filter(p -> p.getRanking() > 4)
+			.map(nicknames)
+			.collect(Collectors.toList());
+
+		assertEquals(3, names.size(), "should have two names");
+
 	}
 
 }
