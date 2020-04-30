@@ -10,6 +10,9 @@
 **build/
 **bin/
 **.gradle/
+**gradle/
+**gradlew
+**gradlew.bat
 .idea/
 **target/
 s3-aws-lambda/outputfile.txt
