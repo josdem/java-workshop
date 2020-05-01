@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PredicateTest {
 
-  private List<Person> persons =
+  private final List<Person> persons =
       Arrays.asList(
           new Person("josdem", 5),
           new Person("tgrip", 4),
