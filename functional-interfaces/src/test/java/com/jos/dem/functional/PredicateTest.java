@@ -9,7 +9,7 @@ import java.util.function.Predicate;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class PredicateTest {
+class PredicateTest {
 
   private final List<Person> persons =
       Arrays.asList(

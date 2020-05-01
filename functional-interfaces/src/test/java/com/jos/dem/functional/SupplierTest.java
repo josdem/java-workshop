@@ -7,7 +7,7 @@ import java.util.function.Supplier;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class SupplierTest {
+class SupplierTest {
 
   @Test
   @DisplayName("Understands how to get a string using supplier")

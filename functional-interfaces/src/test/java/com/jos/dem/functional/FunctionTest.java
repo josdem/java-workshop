@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class FunctionTest {
+class FunctionTest {
 
   private final List<Person> persons =
       Arrays.asList(
