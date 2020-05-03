@@ -1,20 +1,29 @@
 def junitJupiterVersion = '5.3.1'
+def lombokVersion = '1.18.12'
 
 apply plugin: "java"
 
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
 repositories {
-  mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-  testCompile "org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion"
-  testRuntime "org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion"
+    compileOnly "org.projectlombok:lombok:$lombokVersion"
+    annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+    testCompile "org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion"
+    testRuntime "org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion"
 }
 
 test {
-  useJUnitPlatform()
+    useJUnitPlatform()
 
-  reports {
-    html.enabled = true
-  }
+    reports {
+        html.enabled = true
+    }
 }

@@ -32,10 +32,10 @@ class FunctionTest {
   @Test
   @DisplayName("Understands how to get josdem lenght and if it is even")
   public void shouldKnowIfNicknameLengthIsEven() {
-    Function<String, Integer> lenghtFunction = string -> string.length();
+    Function<String, Integer> lengthFunction = string -> string.length();
     Function<Integer, Boolean> evenFunction = integer -> integer % 2 == 0;
 
-    assertTrue(lenghtFunction.andThen(evenFunction).apply("josdem"));
+    assertTrue(lengthFunction.andThen(evenFunction).apply("josdem"));
   }
 
   @Test
