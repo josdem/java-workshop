@@ -22,20 +22,11 @@ class FunctionTest {
           new Person("siedrix", 5));
 
   @Test
-  @DisplayName("Understands how to get string lenght")
-  public void shouldGetStringLenght() {
+  @DisplayName("Understands how to get string length")
+  public void shouldGetStringLength() {
     Integer expectedResult = 6;
     Function<String, Integer> function = string -> string.length();
     assertEquals(expectedResult, function.apply("josdem"));
-  }
-
-  @Test
-  @DisplayName("Understands how to get josdem lenght and if it is even")
-  public void shouldKnowIfNicknameLengthIsEven() {
-    Function<String, Integer> lengthFunction = string -> string.length();
-    Function<Integer, Boolean> evenFunction = integer -> integer % 2 == 0;
-
-    assertTrue(lengthFunction.andThen(evenFunction).apply("josdem"));
   }
 
   @Test
@@ -43,6 +34,15 @@ class FunctionTest {
   public void shouldGetFunctionIdentity() {
     Function<String, String> function = Function.identity();
     assertEquals("josdem", function.apply("josdem"));
+  }
+
+  @Test
+  @DisplayName("Understands how to get josdem length and if it is even")
+  public void shouldKnowIfNicknameLengthIsEven() {
+    Function<String, Integer> lengthFunction = string -> string.length();
+    Function<Integer, Boolean> evenFunction = integer -> integer % 2 == 0;
+
+    assertTrue(lengthFunction.andThen(evenFunction).apply("josdem"));
   }
 
   @Test
