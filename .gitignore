@@ -6,6 +6,7 @@
 **.project
 **.vscode
 **.settings
+**.iml
 **gradle.properties
 **build/
 **bin/
