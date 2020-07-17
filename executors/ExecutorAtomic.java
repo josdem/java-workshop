@@ -11,7 +11,7 @@ public class ExecutorAtomic {
 	private ExecutorService executor = Executors.newFixedThreadPool(3);
 
 	private Integer start() throws InterruptedException {
-		IntStream.range(0, 3).forEach(i -> executor.submit(atomic::incrementAndGet));
+		IntStream.range(0, 3).forEach(i -> executor.execute(atomic::incrementAndGet));
 		executor.shutdown();
 
 		executor.awaitTermination(MAX_PERIOD_TIME, TimeUnit.SECONDS);
