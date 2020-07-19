@@ -1,26 +1,21 @@
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
+import java.util.function.Function;
+import java.util.function.Supplier;
 
 public class CompletableFutureSupplyAsync {
 
-  private void start() throws InterruptedException, ExecutionException {
-    CompletableFuture<String> completableFuture  = CompletableFuture.supplyAsync( () -> {
-      try{
-        TimeUnit.SECONDS.sleep(3);
-      } catch(InterruptedException ie){
-        System.out.println("InterruptedException: " + ie.getMessage());
-      }
-      return "3 seconds";
-    }).thenApply(message -> {
-      return "I have been sleeping " + message;
-    });
-    System.out.println(completableFuture.get());
+  private String start() throws InterruptedException, ExecutionException {
+    final Supplier<String> supplier = () -> "hello";
+    final Function<String, String> function = value -> value + " world";
+
+    CompletableFuture<String> completableFuture =
+        CompletableFuture.supplyAsync(supplier).thenApply(function);
+    return completableFuture.get();
   }
 
   public static void main(String[] args) throws InterruptedException, ExecutionException {
-    new CompletableFutureSupplyAsync().start();
+    String result = new CompletableFutureSupplyAsync().start();
+    assert result.equals("hello world");
   }
-
 }
-

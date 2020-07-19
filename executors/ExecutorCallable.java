@@ -6,17 +6,18 @@ public class ExecutorCallable {
 
   private ExecutorService executor = Executors.newFixedThreadPool(3);
 
-  private void start() throws InterruptedException, ExecutionException {
+  private Integer start() throws InterruptedException, ExecutionException {
     Future<Integer> future = executor.submit(new CallableThread());
     final Integer result = future.get();
     executor.shutdown();
 
-    System.out.println("I have been sleeping: " + result + " seconds");
     executor.awaitTermination(MAX_PERIOD_TIME, TimeUnit.SECONDS);
+    return result;
   }
 
   public static void main(String[] args) throws InterruptedException, ExecutionException {
-    new ExecutorCallable().start();
+    Integer result = new ExecutorCallable().start();
+    assert result == 3;
   }
 }
 
