@@ -9,10 +9,10 @@ public class DateOperations {
     System.out.println("Next week: " + localDate.plusDays(7));
     System.out.println("Is a Leap Year?: " + localDate.isLeapYear());
 
-    LocalDate christmas = LocalDate.of(2020, Month.DECEMBER, 25);
+    LocalDate christmas = LocalDate.of(2021, Month.DECEMBER, 25);
     System.out.println("Today is before Christmas?: " + localDate.isBefore(christmas));
 
-    LocalDate christmasParsed = LocalDate.parse("2020-12-25");
+    LocalDate christmasParsed = LocalDate.parse("2021-12-25");
     System.out.println("Christmas Parsed: " + christmasParsed);
 
     LocalDateTime localDateTime = LocalDateTime.now();
