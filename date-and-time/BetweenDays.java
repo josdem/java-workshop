@@ -7,7 +7,7 @@ import static java.time.temporal.ChronoUnit.DAYS;
 public class BetweenDays {
 
   private void compute() {
-    LocalDate christmas = LocalDate.of(2020, Month.DECEMBER, 25);
+    LocalDate christmas = LocalDate.of(2021, Month.DECEMBER, 25);
     LocalDate today = LocalDate.now();
     long days = DAYS.between(today, christmas);
     System.out.println("There are " + days + " shopping days until Christmas");
