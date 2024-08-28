@@ -2,7 +2,7 @@ import java.util.List;
 import java.util.Arrays;
 import java.util.Optional;
 
-class StreamReductor {
+public class StreamReductor {
 
   private Optional<String> getLargestName(List<String> nicknames){
     return nicknames.stream().reduce((s1,s2) -> s1.length() > s2.length() ? s1 : s2);
