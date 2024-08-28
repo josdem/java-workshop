@@ -20,14 +20,14 @@ public class PersonMatcher {
   }
 
   public static void main(String[] args){
-  	List<Person> persons = Arrays.asList(
+  	var persons = Arrays.asList(
   		new Person("josdem", RoleType.DEVELOPER),
       new Person("tgtip", RoleType.DEVELOPER),
       new Person("skuarch", RoleType.DEVELOPER)
     );
-    PersonMatcher matcher = new PersonMatcher();
+    var matcher = new PersonMatcher();
 
-    Boolean result = matcher.anyPersonStartsWith(persons, "j");
+    var result = matcher.anyPersonStartsWith(persons, "j");
     assert result;
 
     result = matcher.allAreSameType(persons, RoleType.DEVELOPER);
