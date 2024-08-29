@@ -15,7 +15,7 @@ public class ListSorter {
 			new BigDecimal("25.90"),
 			new BigDecimal("41.60"),
 			new BigDecimal("9.50")
-	  );
+		);
 
     var result = new ListSorter().sort(prices);
     assert 4 == result.size();
