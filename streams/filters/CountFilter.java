@@ -6,12 +6,11 @@ public class CountFilter {
 
   private Long parse(){
     return Arrays.asList("Java", "C++", "Lisp", "Haskell").
-      stream().filter( p -> p.length() == 4).
-      collect(Collectors.counting());
+      stream().filter( p -> p.length() == 4).count();
   }
 
   public static void main(String[] args){
-    Long result = new CountFilter().parse();
+    var result = new CountFilter().parse();
     assert 2L == result;
   }
 
