@@ -5,17 +5,17 @@ import java.util.stream.Collectors;
 
 public class ListSorter {
 
-	private List<BigDecimal> sort(List<BigDecimal> prices){
-		return prices.stream().sorted( (p1, p2) -> p1.compareTo(p2) ).toList();
-	}
+    private List<BigDecimal> sort(List<BigDecimal> prices){
+      return prices.stream().sorted( (p1, p2) -> p1.compareTo(p2) ).toList();
+    }
 
-	public static void main(String[] args){
-		var prices = Arrays.asList(
-			new BigDecimal("10.25"),
-			new BigDecimal("25.90"),
-			new BigDecimal("41.60"),
-			new BigDecimal("9.50")
-	  );
+    public static void main(String[] args){
+      var prices = Arrays.asList(
+          new BigDecimal("10.25"),
+          new BigDecimal("25.90"),
+          new BigDecimal("41.60"),
+          new BigDecimal("9.50")
+      );
 
     var result = new ListSorter().sort(prices);
     assert 4 == result.size();
