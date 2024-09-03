@@ -10,7 +10,7 @@ public class GroupByCollector {
 
   public static void main(String[] args){
   	var persons = List.of(
-  		new Person("josdem", RoleType.DEVELOPER),
+		new Person("josdem", RoleType.DEVELOPER),
       	new Person("tgtip", RoleType.DEVELOPER),
       	new Person("erich", RoleType.TESTER)
     );
