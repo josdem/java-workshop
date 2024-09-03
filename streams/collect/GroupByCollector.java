@@ -22,20 +22,19 @@ public class GroupByCollector {
 }
 
 class Person {
-	String name;
-	RoleType type;
+  String name;
+  RoleType type;
 
-	public Person(String name, RoleType type){
-		this.name = name;
-		this.type = type;
-	}
+  public Person(String name, RoleType type){
+    this.name = name;
+    this.type = type;
+  }
 
-	RoleType getType(){
-		return type;
-	}
-
+  RoleType getType(){
+    return type;
+  }
 }
 
 enum RoleType {
-	DEVELOPER, TESTER
+  DEVELOPER, TESTER
 }
