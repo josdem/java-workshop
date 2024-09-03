@@ -1,6 +1,5 @@
 import java.util.List;
 import java.util.Map;
-import java.util.Arrays;
 import java.util.stream.Collectors;
 
 public class GroupByCollector {
@@ -10,12 +9,12 @@ public class GroupByCollector {
   }
 
   public static void main(String[] args){
-  	List<Person> persons = Arrays.asList(
+  	var persons = List.of(
   		new Person("josdem", RoleType.DEVELOPER),
-      new Person("tgtip", RoleType.DEVELOPER),
-      new Person("erich", RoleType.TESTER)
+      	new Person("tgtip", RoleType.DEVELOPER),
+      	new Person("erich", RoleType.TESTER)
     );
-    Map<RoleType, List<Person>> result = new GroupByCollector().parse(persons);
+    var result = new GroupByCollector().parse(persons);
     assert result.get(RoleType.DEVELOPER).size() == 2;
     assert result.get(RoleType.TESTER).size() == 1;
   }
