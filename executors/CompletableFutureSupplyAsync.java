@@ -9,13 +9,12 @@ public class CompletableFutureSupplyAsync {
     final Supplier<String> supplier = () -> "hello";
     final Function<String, String> function = value -> value + " world";
 
-    CompletableFuture<String> completableFuture =
-        CompletableFuture.supplyAsync(supplier).thenApply(function);
+    var completableFuture = CompletableFuture.supplyAsync(supplier).thenApply(function);
     return completableFuture.get();
   }
 
   public static void main(String[] args) throws InterruptedException, ExecutionException {
-    String result = new CompletableFutureSupplyAsync().start();
+    var result = new CompletableFutureSupplyAsync().start();
     assert result.equals("hello world");
   }
 }
