@@ -1,9 +1,14 @@
-apply plugin: "java"
-apply plugin: "application"
+plugins {
+  id 'java'
+}
 
-def junitJupiterVersion = '5.6.0'
+def junitJupiterVersion = '5.11.0'
 
-sourceCompatibility = 12
+java {
+  toolchain {
+    languageVersion = JavaLanguageVersion.of(21)
+  }
+}
 
 repositories {
   mavenCentral()
@@ -11,9 +16,9 @@ repositories {
 
 dependencies {
   testImplementation "org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion"
-  testRuntime "org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion"
+  testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion"
 }
 
-test {
+tasks.named('test') {
   useJUnitPlatform()
 }
