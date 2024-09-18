@@ -1,7 +1,7 @@
 package com.jos.dem.generics;
 
 public class NaturalNumber<N extends Number> {
-  private N number;
+  private final N number;
 
   public NaturalNumber(N number){
     this.number = number;
@@ -13,5 +13,4 @@ public class NaturalNumber<N extends Number> {
   public boolean isEven() {
 	  return this.number.intValue() % 2 == 0;
   }
-
 }

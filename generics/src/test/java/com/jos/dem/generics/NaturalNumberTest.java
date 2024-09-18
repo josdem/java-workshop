@@ -7,8 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-
-public class NaturalNumberTest {
+class NaturalNumberTest {
 
   @Test
   @DisplayName("should throw an exception")
@@ -19,14 +18,14 @@ public class NaturalNumberTest {
   @Test
   @DisplayName("should know if is even")
   void shouldKnowIfIsEven(){
-    NaturalNumber<Number> naturalNumber = new NaturalNumber<Number>(2);
+    var naturalNumber = new NaturalNumber<Number>(2);
     assertTrue(naturalNumber.isEven());
   }
 
   @Test
   @DisplayName("should know if is odd")
   void shouldKnowIfIsOdd(){
-    NaturalNumber<Integer> naturalNumber = new NaturalNumber<Integer>(1);
+    var naturalNumber = new NaturalNumber<>(1);
     assertFalse(naturalNumber.isEven());
   }
   
