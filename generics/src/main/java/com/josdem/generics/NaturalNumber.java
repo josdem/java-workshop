@@ -1,4 +1,4 @@
-package com.jos.dem.generics;
+package com.josdem.generics;
 
 public class NaturalNumber<N extends Number> {
   private final N number;

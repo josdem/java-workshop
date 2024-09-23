@@ -1,4 +1,4 @@
-package com.jos.dem.generics;
+package com.josdem.generics;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

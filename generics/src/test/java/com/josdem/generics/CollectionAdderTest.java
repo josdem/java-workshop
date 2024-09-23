@@ -1,4 +1,4 @@
-package com.jos.dem.generics;
+package com.josdem.generics;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

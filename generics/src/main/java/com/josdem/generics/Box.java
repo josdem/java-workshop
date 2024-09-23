@@ -1,4 +1,4 @@
-package com.jos.dem.generics;
+package com.josdem.generics;
 
 public class Box<T> {
   private T type;
